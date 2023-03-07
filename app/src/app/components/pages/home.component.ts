@@ -130,11 +130,11 @@ export class homeComponent {
       const page = this.page;
       console.log(page.showContacts);
 
-      page.socket = page.io('http://localhost:8081');
+      page.socket = page.io('https://chatwithme-1c2d.onrender.com');
       page.socket.on('connection', (data) => {
         console.log('Connected to server' + data);
       });
-      page.socket.current = io('http://localhost:8081');
+      page.socket.current = io('https://chatwithme-1c2d.onrender.com');
       page.socket.current.emit('add-user', bh.system.currentUser.username);
 
       bh = this.sd_qidpAg8ko6W9l4gm(bh);

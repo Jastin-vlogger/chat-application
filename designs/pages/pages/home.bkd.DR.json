@@ -870,7 +870,6 @@
                         "9d0be24f-da9e-be72-b33f-ad8dc4e90ec7": {
                             "paletteKey": "NG-image",
                             "parentEditorKey": "bfb38284-c2ba-aa26-02b7-fc4f01e2337e",
-                            "isCommented": "false",
                             "commentid": null,
                             "designerReference": [
                                 {
@@ -1364,7 +1363,9 @@
                                 "input": [
                                     "$event"
                                 ]
-                            }
+                            },
+                            "inValid": false,
+                            "message": ""
                         }
                     ]
                 },

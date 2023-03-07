@@ -48,7 +48,8 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "homeComponent"
+        "serviceName": "homeComponent",
+        "generated": false
     },
     {
         "id": "sd_ZEQvlTP0Pln8Ab10",
@@ -80,7 +81,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "console.log(page.showContacts)\n\n  page.socket = page.io('http://localhost:8081');\n      page.socket.on('connection', (data) => {\n        console.log('Connected to server' + data);\n      });\n      page.socket.current = io('http://localhost:8081');\n      page.socket.current.emit(\"add-user\", bh.system.currentUser.username);\n",
+        "script": "console.log(page.showContacts)\n\n  page.socket = page.io('https://chatwithme-1c2d.onrender.com');\n      page.socket.on('connection', (data) => {\n        console.log('Connected to server' + data);\n      });\n      page.socket.current = io('https://chatwithme-1c2d.onrender.com');\n      page.socket.current.emit(\"add-user\", bh.system.currentUser.username);\n",
         "functionName": "sd_tkDNX2QuSc92w5ZV",
         "category": "Function",
         "x": 225,
@@ -118,7 +119,8 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "homeComponent"
+        "serviceName": "homeComponent",
+        "generated": false
     },
     {
         "id": "sd_qRAKL4uP36EP7iIG",
@@ -251,9 +253,9 @@
             ]
         ],
         "__n_excludedFromValidation__": {},
+        "generated": true,
         "generateNext": false,
-        "serviceName": "homeComponent",
-        "generated": true
+        "serviceName": "homeComponent"
     },
     {
         "id": "sd_ztXQDxtwBdFMhFNl",
@@ -346,7 +348,8 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "homeComponent"
+        "serviceName": "homeComponent",
+        "generated": false
     },
     {
         "id": "sd_gCQOnuNWUkfyf8Zl",
@@ -491,7 +494,8 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "homeComponent"
+        "serviceName": "homeComponent",
+        "generated": false
     },
     {
         "id": "sd_u7viN3wdV7XLzzsx",

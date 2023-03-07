@@ -118,7 +118,7 @@ console.log('process.env.pm_id', process.env.pm_id);
         const server = baseApp.listen(port);
         const io = new Server(server, {
             cors: {
-                origin: "https://chatwithme-1c2d.onrender.com",
+                origin: "http://localhost:4200",
                 methods: "*",
                 credentials: true,
             },
