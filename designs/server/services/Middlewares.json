@@ -104,12 +104,6 @@
                     "rowId": "sd_7TatCmJmoUOhvvhI",
                     "valid": true,
                     "type": "str"
-                },
-                {
-                    "key": "https://chatwithme-1c2d.onrender.com",
-                    "rowId": "sd_h5MU6gYblopqVDix",
-                    "valid": true,
-                    "type": "str"
                 }
             ]
         },
@@ -138,12 +132,12 @@
         "nodeType": "middleware",
         "name": "Global Session",
         "cookieDomain": "",
-        "cookieSecure": false,
+        "cookieSecure": true,
         "cookieExpires": "",
         "cookieHttpOnly": false,
         "cookieMaxAge": "15 * 24 * 60 * 60 * 1000 ",
         "cookiePath": "",
-        "cookieSameSite": "\"lax\"",
+        "cookieSameSite": "\"none\"",
         "proxy": false,
         "resave": false,
         "rolling": false,
