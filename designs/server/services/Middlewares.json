@@ -8,8 +8,7 @@
         "info": "",
         "generateNext": true,
         "serviceName": "Middlewares",
-        "relativeParentPath": "",
-        "viewType": "server"
+        "relativeParentPath": ""
     },
     {
         "id": "ssd_global_middleware_start_id",
@@ -105,6 +104,12 @@
                     "rowId": "sd_7TatCmJmoUOhvvhI",
                     "valid": true,
                     "type": "str"
+                },
+                {
+                    "key": "https://chatwithme-1c2d.onrender.com",
+                    "rowId": "sd_h5MU6gYblopqVDix",
+                    "valid": true,
+                    "type": "str"
                 }
             ]
         },
@@ -160,7 +165,8 @@
         "__ssdTypeInputs__": {
             "secret": {
                 "type": "str",
-                "value": "qPXoLFLDtk"
+                "value": "qPXoLFLDtk",
+                "constant": false
             }
         },
         "__n_excludedFromValidation__": {},

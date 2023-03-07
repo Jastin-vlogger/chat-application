@@ -190,6 +190,7 @@
             "send": "bh.result"
         },
         "dataModelIsArray": false,
+        "cookies": [],
         "inputs": 1,
         "outputs": 0,
         "erd": "",

@@ -8,7 +8,7 @@ import { getConnection } from 'typeorm'; //_splitter_
 export let Middlewares = {
   cors: () => {
     let corsOptions = {
-      origin: ['http://localhost:4200'],
+      origin: ['http://localhost:4200', 'https://chatwithme-1c2d.onrender.com'],
       methods: ['POST', 'GET', 'DELETE', 'PATCH'],
 
       credentials: true,
