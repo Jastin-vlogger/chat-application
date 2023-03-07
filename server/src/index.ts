@@ -123,21 +123,6 @@ console.log('process.env.pm_id', process.env.pm_id);
                 credentials: true,
             },
         });
-
-
-        // io.on('connection', (socket) => {
-        //     log.info('a user connected');
-        //     socket.emit('connection','ni poda')
-        //     socket.on('chat message', (msg) => {
-        //         console.log(`message: ${msg}`);
-        //         io.emit('chat message', msg);
-        //     });
-
-        //     socket.on('disconnect', () => {
-        //         console.log('user disconnected');
-        //     });
-        // });
-
         global.onlineUsers = new Map();
 
         io.on("connection", (socket) => {
