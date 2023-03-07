@@ -989,7 +989,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "console.log(bh.result)",
+        "script": "console.log(bh.result ,\"++++++++++===\")",
         "functionName": "sd_sEUA2ob2Y1EUx3KP",
         "category": "Function",
         "x": 780,

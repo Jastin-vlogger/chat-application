@@ -384,7 +384,7 @@ export class login {
       parentSpanInst
     );
     try {
-      console.log(bh.result);
+      console.log(bh.result, '++++++++++===');
       this.tracerService.sendData(spanInst, bh);
       await this.loginSucess(bh, parentSpanInst);
       //appendnew_next_sd_sEUA2ob2Y1EUx3KP
