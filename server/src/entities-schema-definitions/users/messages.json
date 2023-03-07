@@ -1,0 +1,71 @@
+{
+    "name": "messages",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "description": "",
+    "type": "object",
+    "id": "_EN_akqsmof546",
+    "y": 45,
+    "properties": {
+        "message": {
+            "name": "message",
+            "format": "",
+            "type": "object",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_l332vcbpt7",
+                "nullable": false
+            }
+        },
+        "users": {
+            "name": "users",
+            "format": "",
+            "type": "object",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_ueedx4utyx",
+                "nullable": false
+            }
+        },
+        "sender": {
+            "name": "sender",
+            "format": "",
+            "type": "object",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_awtbdyznoe",
+                "subCategoryType": null,
+                "nullable": false
+            }
+        },
+        "date": {
+            "name": "date",
+            "format": "date-time",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_zn4dnnrmys",
+                "subCategoryType": "date",
+                "nullable": false
+            }
+        }
+    },
+    "required": [
+        "users",
+        "sender",
+        "date"
+    ],
+    "value": "",
+    "x": 494,
+    "userList": {
+        "SSD_SERVICE_ID_sd_uVwNpKUSlSUYBMYa": [
+            "sd_HRoHQgkYHtRrqW4P"
+        ],
+        "SSD_SERVICE_ID_sd_m0hZj2jz1zkptJU7": [
+            "sd_UL5x2QohTGrTYhca"
+        ]
+    }
+}

@@ -1,0 +1,105 @@
+[
+    {
+        "id": "sd_ndbvHrU4haBAcXjH",
+        "type": "tab",
+        "createdDate": "2023-02-26T05:47:38.783Z",
+        "label": "button",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "buttonComponent"
+    },
+    {
+        "id": "sd_Yq7qdszHuQ87R7FQ",
+        "type": "OnInit",
+        "z": "sd_ndbvHrU4haBAcXjH",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "inputVariables": [
+            {
+                "key": "buttonName",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                }
+            },
+            {
+                "key": "isDisabled",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                }
+            }
+        ],
+        "localVariables": [],
+        "outputVariables": [],
+        "pageVariables": [],
+        "functionName": "sd_Yq7qdszHuQ87R7FQ",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_YXJs1dTcfK2WQTNS"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "buttonComponent"
+    },
+    {
+        "id": "sd_YXJs1dTcfK2WQTNS",
+        "type": "PageVariables",
+        "z": "sd_ndbvHrU4haBAcXjH",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "name",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "\"backk\""
+                }
+            }
+        ],
+        "functionName": "sd_YXJs1dTcfK2WQTNS",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            [
+                "sd_Fs5ZkzLtx6TObN9r"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "buttonComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_Fs5ZkzLtx6TObN9r",
+        "type": "Script",
+        "z": "sd_ndbvHrU4haBAcXjH",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(this.buttonName)\n",
+        "functionName": "sd_Fs5ZkzLtx6TObN9r",
+        "category": "Function",
+        "x": 305,
+        "y": 80,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "buttonComponent",
+        "generated": true
+    }
+]

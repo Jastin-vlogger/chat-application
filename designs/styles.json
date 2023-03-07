@@ -1,0 +1,32 @@
+{
+    "classes": [
+        "padding-2",
+        "padding-1",
+        "mat-button",
+        "accent-color",
+        "textColor",
+        "contact",
+        "chat_container",
+        "show",
+        "hide",
+        "container",
+        "contact-section",
+        "chat-section",
+        "hidden",
+        "chat-ui",
+        "user",
+        "chat-container",
+        "chat-box",
+        "received",
+        "sent",
+        "time",
+        "w-input-container",
+        "w-placeholder",
+        "w-input-text",
+        "showContacts",
+        "selected",
+        "welcome",
+        "font-4",
+        "header"
+    ]
+}

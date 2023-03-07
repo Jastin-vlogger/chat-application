@@ -1,0 +1,76 @@
+[
+    {
+        "id": "sd_T0wvipH5VazNyoGP",
+        "type": "tab",
+        "createdDate": "2023-02-24T12:45:00.047Z",
+        "label": "paragraph",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "paragraphComponent"
+    },
+    {
+        "id": "sd_c51aQfMrVHsQ5R9o",
+        "type": "OnInit",
+        "z": "sd_T0wvipH5VazNyoGP",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "inputVariables": [
+            {
+                "key": "paragraph",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                }
+            }
+        ],
+        "localVariables": [],
+        "outputVariables": [],
+        "pageVariables": [],
+        "functionName": "sd_c51aQfMrVHsQ5R9o",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_YAHNZhW7XlVSXz2O"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "paragraphComponent"
+    },
+    {
+        "id": "sd_YAHNZhW7XlVSXz2O",
+        "type": "PageVariables",
+        "z": "sd_T0wvipH5VazNyoGP",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "para",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "\"\""
+                }
+            }
+        ],
+        "functionName": "sd_YAHNZhW7XlVSXz2O",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "paragraphComponent",
+        "generated": true
+    }
+]

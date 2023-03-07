@@ -1,0 +1,521 @@
+[
+    {
+        "id": "sd_sUtmd8S9OYDet9MQ",
+        "type": "tab",
+        "createdDate": "2023-02-27T11:31:14.581Z",
+        "label": "login",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "tabType": "client",
+        "generateNext": true,
+        "serviceName": "login",
+        "relativeParentPath": ""
+    },
+    {
+        "id": "sd_sRvYkQD67xElzhSw",
+        "type": "Start",
+        "z": "sd_sUtmd8S9OYDet9MQ",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "loginRequest to backend",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "email",
+                "defaultValue": {
+                    "type": "str",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "password",
+                "defaultValue": {
+                    "type": "str",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [
+            {
+                "key": "result",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "loginRequestToBackend",
+        "category": "General",
+        "x": 85,
+        "y": 100,
+        "wires": [
+            [
+                "sd_plC6Fr6ZPtMOSpK4"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "login"
+    },
+    {
+        "id": "sd_plC6Fr6ZPtMOSpK4",
+        "type": "Environment",
+        "z": "sd_sUtmd8S9OYDet9MQ",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "bh.local",
+                    "value": "baseUrl"
+                },
+                "envProperty": "ssdURL"
+            }
+        ],
+        "functionName": "sd_plC6Fr6ZPtMOSpK4",
+        "category": "General",
+        "x": 205,
+        "y": 100,
+        "wires": [
+            [
+                "sd_PYJSRp3Emai5CkWb"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "login",
+        "generated": true
+    },
+    {
+        "id": "sd_PYJSRp3Emai5CkWb",
+        "type": "Script",
+        "z": "sd_sUtmd8S9OYDet9MQ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.loginUrl = `${bh.local.baseUrl}login`\n\nconsole.log(bh.input.email,bh.input.password)\nbh.body = {\n    email : bh.input.email,\n    password : bh.input.password,\n}",
+        "functionName": "sd_PYJSRp3Emai5CkWb",
+        "category": "Function",
+        "x": 325,
+        "y": 100,
+        "wires": [
+            [
+                "sd_WOSKh6aKJCKMMSuY"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "login",
+        "generated": true
+    },
+    {
+        "id": "sd_WOSKh6aKJCKMMSuY",
+        "type": "HttpRequest",
+        "z": "sd_sUtmd8S9OYDet9MQ",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "post",
+        "methodMapping": "",
+        "methodMappingObj": {},
+        "urlMapping": "bh.loginUrl",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "loginUrl"
+        },
+        "ret": "json",
+        "retMapping": "",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMapping": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "bh.body",
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "body"
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMapping": "",
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMapping": "",
+        "paramMappingObj": {},
+        "functionName": "sd_WOSKh6aKJCKMMSuY",
+        "category": "HTTP",
+        "x": 425,
+        "y": 100,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "login",
+        "generated": true
+    },
+    {
+        "id": "sd_ItHrLslBoKmvSFdj",
+        "type": "Start",
+        "z": "sd_sUtmd8S9OYDet9MQ",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "login credentials of neutrinos",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "email",
+                "defaultValue": {
+                    "type": "str",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "displayName",
+                "defaultValue": {
+                    "type": "str",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [
+            {
+                "key": "result",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "loginCredentialsOfNeutrinos",
+        "category": "General",
+        "x": 85,
+        "y": 220,
+        "wires": [
+            [
+                "sd_nNWSrfJGcgY6E1mV"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "login"
+    },
+    {
+        "id": "sd_nNWSrfJGcgY6E1mV",
+        "type": "Environment",
+        "z": "sd_sUtmd8S9OYDet9MQ",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "bh.local",
+                    "value": "baseUrl"
+                },
+                "envProperty": "ssdURL"
+            }
+        ],
+        "functionName": "sd_nNWSrfJGcgY6E1mV",
+        "category": "General",
+        "x": 210,
+        "y": 220,
+        "wires": [
+            [
+                "sd_ON07BgiR8lTn2fHh"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "login",
+        "generated": true
+    },
+    {
+        "id": "sd_ON07BgiR8lTn2fHh",
+        "type": "Script",
+        "z": "sd_sUtmd8S9OYDet9MQ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.loginUrl = `${bh.local.baseUrl}login`\n\nconsole.log(bh.input.email,bh.input.password)\nbh.body = {\n    email : bh.input.email,\n    name : bh.input.displayName,\n}",
+        "functionName": "sd_ON07BgiR8lTn2fHh",
+        "category": "Function",
+        "x": 310,
+        "y": 220,
+        "wires": [
+            [
+                "sd_MjcjAgCelZFWTdrE"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "login",
+        "generated": true
+    },
+    {
+        "id": "sd_MjcjAgCelZFWTdrE",
+        "type": "HttpRequest",
+        "z": "sd_sUtmd8S9OYDet9MQ",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "post",
+        "methodMapping": "",
+        "methodMappingObj": {},
+        "urlMapping": "bh.loginUrl",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "loginUrl"
+        },
+        "ret": "json",
+        "retMapping": "",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMapping": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "bh.body",
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "body"
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMapping": "",
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMapping": "",
+        "paramMappingObj": {},
+        "functionName": "sd_MjcjAgCelZFWTdrE",
+        "category": "HTTP",
+        "x": 410,
+        "y": 220,
+        "wires": [
+            [
+                "sd_C53ofSyhC2TEuyX1"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "login",
+        "generated": true
+    },
+    {
+        "id": "sd_C53ofSyhC2TEuyX1",
+        "type": "Script",
+        "z": "sd_sUtmd8S9OYDet9MQ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.local.result)",
+        "functionName": "sd_C53ofSyhC2TEuyX1",
+        "category": "Function",
+        "x": 525,
+        "y": 220,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "login",
+        "generated": true
+    },
+    {
+        "id": "sd_oL5a3tB1VWkpCby6",
+        "type": "Start",
+        "z": "sd_sUtmd8S9OYDet9MQ",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "saving messags to the db",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "fro",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "to",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "msg",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "accept_bh": false,
+        "functionName": "savingMessagsToTheDb",
+        "category": "General",
+        "x": 85,
+        "y": 340,
+        "wires": [
+            [
+                "sd_3SB1hVLRTYoOj3eo"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "login"
+    },
+    {
+        "id": "sd_3SB1hVLRTYoOj3eo",
+        "type": "Environment",
+        "z": "sd_sUtmd8S9OYDet9MQ",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "bh.local",
+                    "value": "baseUrl"
+                },
+                "envProperty": "ssdURL"
+            }
+        ],
+        "functionName": "sd_3SB1hVLRTYoOj3eo",
+        "category": "General",
+        "x": 185,
+        "y": 340,
+        "wires": [
+            [
+                "sd_8EU641ieLf5pVk9Z"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "login",
+        "generated": true
+    },
+    {
+        "id": "sd_8EU641ieLf5pVk9Z",
+        "type": "Script",
+        "z": "sd_sUtmd8S9OYDet9MQ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.messageUrl = `${bh.local.baseUrl}messages`\n\nconsole.log(bh.input.fro,bh.input.to,bh.input.msg)\n\nbh.body = {\n    from :bh.input.fro,\n    to :bh.input.to,\n    message: bh.input.msg\n}",
+        "functionName": "sd_8EU641ieLf5pVk9Z",
+        "category": "Function",
+        "x": 311,
+        "y": 351.8125,
+        "wires": [
+            [
+                "sd_W1fn3gjNDl3uquUl"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "login",
+        "generated": true
+    },
+    {
+        "id": "sd_W1fn3gjNDl3uquUl",
+        "type": "HttpRequest",
+        "z": "sd_sUtmd8S9OYDet9MQ",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "http request to add message",
+        "method": "post",
+        "methodMappingObj": {},
+        "urlMapping": "bh.messageUrl",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "messageUrl"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "bh.body",
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "body"
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "functionName": "httpRequestToAddMessage",
+        "category": "HTTP",
+        "x": 411,
+        "y": 351.8125,
+        "wires": [
+            [
+                "sd_6Mdj2fEXppO96yOp"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "login",
+        "generated": true
+    },
+    {
+        "id": "sd_6Mdj2fEXppO96yOp",
+        "type": "Script",
+        "z": "sd_sUtmd8S9OYDet9MQ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.local.result)",
+        "functionName": "sd_6Mdj2fEXppO96yOp",
+        "category": "Function",
+        "x": 526,
+        "y": 351.8125,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "login",
+        "generated": true
+    }
+]

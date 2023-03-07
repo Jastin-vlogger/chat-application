@@ -1,0 +1,41 @@
+{
+    "/login": {
+        "post": {
+            "summary": "login",
+            "description": "through post req there credentials will be sent so that server see to it",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "login"
+            ]
+        }
+    },
+    "/user_fetch": {
+        "get": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "login"
+            ]
+        }
+    },
+    "/messages": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "login"
+            ]
+        }
+    }
+}

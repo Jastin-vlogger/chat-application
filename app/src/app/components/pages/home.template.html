@@ -1,0 +1,21 @@
+<div fxLayout="column wrap" style="background-color:white;" fxLayoutAlign="start stretch" [fxShow]="true">
+  <div fxLayout="row wrap" class="header padding-1" fxLayoutAlign="space-between center" [fxShow]="true">
+    <div class="textColor">
+      Home</div><mat-icon (click)="logout()">power_settings_new</mat-icon>
+  </div>
+  <div style="background:#white; height:100%;">
+    <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="column wrap" class="contact chat-ui" fxLayoutGap="6px" fxLayoutAlign="start stretch" [fxShow]="true" [ngClass]="{ &apos;showContacts&apos; : page.selected }" *ngIf="page.showContacts">
+        <div fxLayout="row " class="user" fxLayoutAlign="start center" [fxShow]="true" *ngFor="let user of page.users" (click)="sendUserInfo(user.email)" [ngClass]="{ &apos;showContacts&apos; : page.selected , &apos;selected&apos; : page.selected === user.email  }"><img [src]="&apos;https://cdn2.iconfinder.com/data/icons/avatar-profile/449/avatar_user_default_cardigan_contact_profile-512.png&apos;" style="width:35px;height:35px;">
+          <div style="color: black;" class="padding-1">
+            {{user.email}}
+          </div>
+        </div>
+      </div><bh-chatui style="flex:2;" [email]="page.selected" *ngIf="page.selected" [currentUser]="page.system.currentUser.username" [socket]="page.socket" [messages]="page.result" [ngClass]="{ &apos;showContacts&apos; :  !page.selected }" [showContacts]="page.showContacts" (showContactsChange)="toConsoleBackButton($event)"></bh-chatui>
+      <div fxLayout="column wrap" class="welcome chat_container" fxLayoutAlign="center center" [fxShow]="true" *ngIf="!page.selected" fxHide.lt-sm="true">
+        <div class="font-4">
+          Welcome</div>
+      </div>
+    </div>
+  </div>
+</div>

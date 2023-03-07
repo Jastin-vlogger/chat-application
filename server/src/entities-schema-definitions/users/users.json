@@ -1,0 +1,65 @@
+{
+    "name": "users",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "description": "",
+    "type": "object",
+    "id": "_EN_1k85wewxy4",
+    "y": 35,
+    "properties": {
+        "id": {
+            "name": "id",
+            "format": "",
+            "type": "number",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_hzi2msmpm4",
+                "nullable": false
+            }
+        },
+        "name": {
+            "name": "name",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_oug1sg5i6n",
+                "subCategoryType": null,
+                "nullable": false
+            }
+        },
+        "email": {
+            "name": "email",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_k3y2nvqjmk",
+                "subCategoryType": null,
+                "nullable": false
+            }
+        },
+        "password": {
+            "name": "password",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_nskel324px",
+                "subCategoryType": null,
+                "nullable": false
+            }
+        }
+    },
+    "required": [
+        "email",
+        "name",
+        "password"
+    ],
+    "value": "",
+    "x": 56,
+    "__n__metadata__": {}
+}

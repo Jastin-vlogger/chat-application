@@ -1,0 +1,11 @@
+<div fxLayout="column wrap" class="padding-1" fxLayoutAlign="start stretch" [fxShow]="true">
+  <div *ngFor="let message of messages" class="chat-box">
+    <div (click)="func($event)" [ngClass]="{ &apos;sent&apos; : message.sender == currentUser , &apos;received&apos; : message.sender.email != this.currentUser }" class="chat-box">
+      <div>
+        {{message.message.text}}
+      </div>
+      <div class="time">
+        10:00am </div>
+    </div>
+  </div>
+</div>

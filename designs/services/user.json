@@ -1,0 +1,346 @@
+[
+    {
+        "id": "sd_Lkf463mDLx7SmOus",
+        "type": "tab",
+        "createdDate": "2023-03-01T05:58:02.061Z",
+        "label": "user",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "tabType": "client",
+        "generateNext": true,
+        "serviceName": "user",
+        "relativeParentPath": ""
+    },
+    {
+        "id": "sd_s1cpBW880vJr4stE",
+        "type": "Start",
+        "z": "sd_Lkf463mDLx7SmOus",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "fetch users data",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [
+            {
+                "key": "result",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "fetchUsersData",
+        "category": "General",
+        "x": 85,
+        "y": 120,
+        "wires": [
+            [
+                "sd_t1h5e2TVPHz8VZ9L"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "user"
+    },
+    {
+        "id": "sd_t1h5e2TVPHz8VZ9L",
+        "type": "Environment",
+        "z": "sd_Lkf463mDLx7SmOus",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "bh.local",
+                    "value": "baseUrl"
+                },
+                "envProperty": "ssdURL"
+            }
+        ],
+        "functionName": "sd_t1h5e2TVPHz8VZ9L",
+        "category": "General",
+        "x": 185,
+        "y": 120,
+        "wires": [
+            [
+                "sd_sO6oXX9GdmxEGGIh"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "user",
+        "generated": true
+    },
+    {
+        "id": "sd_sO6oXX9GdmxEGGIh",
+        "type": "Script",
+        "z": "sd_Lkf463mDLx7SmOus",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.fetchUrl = `${bh.local.baseUrl}user_fetch`\nconsole.log(bh.fetchUrl)\n\nconsole.log('im home service called')\n",
+        "functionName": "sd_sO6oXX9GdmxEGGIh",
+        "category": "Function",
+        "x": 305,
+        "y": 120,
+        "wires": [
+            [
+                "sd_C4tIeQxvTYb6FrsN"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "user",
+        "generated": true
+    },
+    {
+        "id": "sd_Tf7V3mFVj8WuWHPf",
+        "type": "Script",
+        "z": "sd_Lkf463mDLx7SmOus",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.result)",
+        "functionName": "sd_Tf7V3mFVj8WuWHPf",
+        "category": "Function",
+        "x": 505,
+        "y": 120,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "user"
+    },
+    {
+        "id": "sd_C4tIeQxvTYb6FrsN",
+        "type": "HttpRequest",
+        "z": "sd_Lkf463mDLx7SmOus",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "to fetch user data",
+        "method": "get",
+        "methodMapping": "",
+        "methodMappingObj": {},
+        "urlMapping": "bh.fetchUrl",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "fetchUrl"
+        },
+        "ret": "json",
+        "retMapping": "",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMapping": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "",
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": ""
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMapping": "",
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMapping": "",
+        "paramMappingObj": {},
+        "functionName": "toFetchUserData",
+        "category": "HTTP",
+        "x": 405,
+        "y": 120,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "user",
+        "generated": true
+    },
+    {
+        "id": "sd_q4PPgEXaWxGWUJIh",
+        "type": "Start",
+        "z": "sd_Lkf463mDLx7SmOus",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "get messages from the backend",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "fro",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "to",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [
+            {
+                "key": "messages",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "getMessagesFromTheBackend",
+        "category": "General",
+        "x": 85,
+        "y": 240,
+        "wires": [
+            [
+                "sd_cfISb6ERorSkKIOO"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "user"
+    },
+    {
+        "id": "sd_cfISb6ERorSkKIOO",
+        "type": "Environment",
+        "z": "sd_Lkf463mDLx7SmOus",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "bh.local",
+                    "value": "baseUrl"
+                },
+                "envProperty": "ssdURL"
+            }
+        ],
+        "functionName": "sd_cfISb6ERorSkKIOO",
+        "category": "General",
+        "x": 205,
+        "y": 240,
+        "wires": [
+            [
+                "sd_2xAhi4Fl7Yc7iKui"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "user",
+        "generated": true
+    },
+    {
+        "id": "sd_2xAhi4Fl7Yc7iKui",
+        "type": "Script",
+        "z": "sd_Lkf463mDLx7SmOus",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.messageUrl = `${bh.local.baseUrl}getMessages`\n\nconsole.log(bh.input.fro,bh.input.to)\n\nbh.body = {\n    from :bh.input.fro,\n    to :bh.input.to,\n}",
+        "functionName": "sd_2xAhi4Fl7Yc7iKui",
+        "category": "Function",
+        "x": 325,
+        "y": 240,
+        "wires": [
+            [
+                "sd_kb4MDxYVWYlb8R84"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "user",
+        "generated": true
+    },
+    {
+        "id": "sd_kb4MDxYVWYlb8R84",
+        "type": "HttpRequest",
+        "z": "sd_Lkf463mDLx7SmOus",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "http request to get messages",
+        "method": "post",
+        "methodMappingObj": {},
+        "urlMapping": "bh.messageUrl",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "messageUrl"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "bh.body",
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "body"
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "functionName": "httpRequestToGetMessages",
+        "category": "HTTP",
+        "x": 445,
+        "y": 240,
+        "wires": [
+            [
+                "sd_dLUv9kkvo5gB9RtA"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "user",
+        "generated": true
+    },
+    {
+        "id": "sd_dLUv9kkvo5gB9RtA",
+        "type": "Script",
+        "z": "sd_Lkf463mDLx7SmOus",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\nbh.local.messages = bh.local.result",
+        "functionName": "sd_dLUv9kkvo5gB9RtA",
+        "category": "Function",
+        "x": 665,
+        "y": 240,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "user",
+        "generated": true
+    }
+]

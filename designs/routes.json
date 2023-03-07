@@ -1,0 +1,27 @@
+{
+    "routes": [
+        {
+            "path": "test",
+            "component": "loginComponent"
+        },
+        {
+            "path": "home",
+            "component": "homeComponent"
+        },
+        {
+            "path": "audio",
+            "component": "audioTestComponent"
+        },
+        {
+            "path": "''",
+            "redirectTo": "test",
+            "pathMatch": "full",
+            "default": true
+        },
+        {
+            "path": "**",
+            "component": "PageNotFoundComponent",
+            "redirectTo": ""
+        }
+    ]
+}

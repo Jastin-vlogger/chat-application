@@ -1,0 +1,523 @@
+[
+    {
+        "id": "sd_Cr7G5phrw9t1BQMQ",
+        "type": "tab",
+        "createdDate": "2023-03-01T09:12:45.625Z",
+        "label": "chatui",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "chatuiComponent"
+    },
+    {
+        "id": "sd_kirisANk1V71r8yE",
+        "type": "OnInit",
+        "z": "sd_Cr7G5phrw9t1BQMQ",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "inputVariables": [
+            {
+                "key": "email",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                }
+            },
+            {
+                "key": "currentUser",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                }
+            },
+            {
+                "key": "socket",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                }
+            },
+            {
+                "key": "messages",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                }
+            },
+            {
+                "key": "showContacts",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                }
+            }
+        ],
+        "localVariables": [],
+        "outputVariables": [
+            {
+                "key": "showContactsChange",
+                "defaultValue": {
+                    "type": "any",
+                    "value": null
+                }
+            }
+        ],
+        "pageVariables": [],
+        "functionName": "sd_kirisANk1V71r8yE",
+        "category": "Lifecycle Events",
+        "x": 105,
+        "y": 120,
+        "wires": [
+            [
+                "sd_o5tY7h4tkmXjbzY6"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "chatuiComponent"
+    },
+    {
+        "id": "sd_zFIU0JjrWqU66dUJ",
+        "type": "PageVariables",
+        "z": "sd_Cr7G5phrw9t1BQMQ",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_zFIU0JjrWqU66dUJ",
+        "category": "Function",
+        "x": 365,
+        "y": 120,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "chatuiComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_0B8a4lbozurNPPOB",
+        "type": "PageStart",
+        "z": "sd_Cr7G5phrw9t1BQMQ",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "send messge to backend",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "msg",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "sendMessgeToBackend",
+        "category": "General",
+        "x": 105,
+        "y": 360,
+        "wires": [
+            [
+                "sd_80z4HMnaxyumELJl"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "chatuiComponent"
+    },
+    {
+        "id": "sd_80z4HMnaxyumELJl",
+        "type": "Script",
+        "z": "sd_Cr7G5phrw9t1BQMQ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(page.msg)",
+        "functionName": "sd_80z4HMnaxyumELJl",
+        "category": "Function",
+        "x": 245,
+        "y": 360,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "chatuiComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_OBqG0WKQjed87EY5",
+        "type": "PageStart",
+        "z": "sd_Cr7G5phrw9t1BQMQ",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "messsage",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "messsage",
+        "category": "General",
+        "x": 105,
+        "y": 580,
+        "wires": [
+            [
+                "sd_9RgcjZECdctzEa77"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "chatuiComponent"
+    },
+    {
+        "id": "sd_9RgcjZECdctzEa77",
+        "type": "Script",
+        "z": "sd_Cr7G5phrw9t1BQMQ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "socket emiting script",
+        "script": "console.log(page.msg)\n\nif (!page.msg) {\n  return;\n} else {\n  page.email = this.email;\n  page.currentUser = this.currentUser;\n\n  page.socket.current.emit(\"send-msg\", {\n    to: this.email,\n    from: this.currentUser,\n    message: page.msg,\n  });\n\n\n\n  bh.message = {\n    \"message\": { \"text\": page.msg },\n    \"sender\": this.currentUser,\n    \"users\": [this.currentUser, this.email],\n  }\n\n  this.messages.push(bh.message)\n\n}\n\n\n\n",
+        "functionName": "socketEmitingScript",
+        "category": "Function",
+        "x": 230,
+        "y": 580,
+        "wires": [
+            [
+                "sd_PrqzeWg7SE5dPhb8"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "chatuiComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_K5PyPYlhV8Q7i3c4",
+        "type": "PageStart",
+        "z": "sd_Cr7G5phrw9t1BQMQ",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "evt",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "event",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "evt",
+        "category": "General",
+        "x": 110,
+        "y": 480,
+        "wires": [
+            [
+                "sd_2MMrfqOTpgetKSMr"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "chatuiComponent"
+    },
+    {
+        "id": "sd_2MMrfqOTpgetKSMr",
+        "type": "Script",
+        "z": "sd_Cr7G5phrw9t1BQMQ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.input.event)",
+        "functionName": "sd_2MMrfqOTpgetKSMr",
+        "category": "Function",
+        "x": 245,
+        "y": 480,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "chatuiComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_PrqzeWg7SE5dPhb8",
+        "type": "PageCallService",
+        "z": "sd_Cr7G5phrw9t1BQMQ",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "save message to backend",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_sUtmd8S9OYDet9MQ",
+            "type": "tab",
+            "createdDate": "2023-02-27T11:31:14.581Z",
+            "label": "login",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0,
+            "tabType": "client"
+        },
+        "flow": {
+            "flowId": "sd_oL5a3tB1VWkpCby6",
+            "flowName": "savingMessagsToTheDb"
+        },
+        "inputVariables": [
+            {
+                "key": "fro",
+                "map": true,
+                "valueType": "this.page",
+                "value": "currentUser"
+            },
+            {
+                "key": "to",
+                "map": true,
+                "valueType": "this.page",
+                "value": "email"
+            },
+            {
+                "key": "msg",
+                "map": true,
+                "valueType": "this.page",
+                "value": "msg"
+            }
+        ],
+        "outputMapping": [],
+        "serviceImportPath": "app/sd-services/login",
+        "startName": "savingMessagsToTheDb",
+        "inputParams": [
+            "this.page.currentUser",
+            "this.page.email",
+            "this.page.msg"
+        ],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "saveMessageToBackend",
+        "category": "General",
+        "x": 365,
+        "y": 580,
+        "wires": [
+            [
+                "sd_n9FllMMYVgDOKyeR"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "chatuiComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_o5tY7h4tkmXjbzY6",
+        "type": "Script",
+        "z": "sd_Cr7G5phrw9t1BQMQ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(window)\npage.messages = this.messages\npage.socket = this.socket;\n\npage.fro = this.currentUser;\npage.to = this.email;\n\npage.socket.current.on(\"msg-recieve\", (msg) => {\n    this.messages.push({\n      \"message\": { \"text\": msg },\n      \"sender\": this.email,\n      \"users\": [this.currentUser, this.email],\n    })\n});\n\n",
+        "functionName": "sd_o5tY7h4tkmXjbzY6",
+        "category": "Function",
+        "x": 225,
+        "y": 120,
+        "wires": [
+            [
+                "sd_zFIU0JjrWqU66dUJ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "chatuiComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_DHY7h2O8Fq0xKTeO",
+        "type": "Script",
+        "z": "sd_Cr7G5phrw9t1BQMQ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\npage.messages = [ ]",
+        "functionName": "sd_DHY7h2O8Fq0xKTeO",
+        "category": "Function",
+        "x": 225,
+        "y": 240,
+        "wires": [
+            [
+                "sd_efbgGLcZqmoUHGig"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "chatuiComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_efbgGLcZqmoUHGig",
+        "type": "PageCallService",
+        "z": "sd_Cr7G5phrw9t1BQMQ",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_Lkf463mDLx7SmOus",
+            "type": "tab",
+            "createdDate": "2023-03-01T05:58:02.061Z",
+            "label": "user",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0,
+            "tabType": "client"
+        },
+        "flow": {
+            "flowId": "sd_q4PPgEXaWxGWUJIh",
+            "flowName": "getMessagesFromTheBackend"
+        },
+        "inputVariables": [
+            {
+                "key": "fro",
+                "map": true,
+                "valueType": "this.page",
+                "value": "fro"
+            },
+            {
+                "key": "to",
+                "map": true,
+                "valueType": "this.page",
+                "value": "to"
+            }
+        ],
+        "outputMapping": [
+            {
+                "mapVarType": "local",
+                "key": "messages",
+                "valueType": "bh",
+                "value": "",
+                "mapVarName": "messages"
+            }
+        ],
+        "serviceImportPath": "app/sd-services/user",
+        "startName": "getMessagesFromTheBackend",
+        "inputParams": [
+            "this.page.fro",
+            "this.page.to"
+        ],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_efbgGLcZqmoUHGig",
+        "category": "General",
+        "x": 365,
+        "y": 240,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "chatuiComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_hZzKYPqmwLS9CfSy",
+        "type": "PageStart",
+        "z": "sd_Cr7G5phrw9t1BQMQ",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "get messages",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "getMessages",
+        "category": "General",
+        "x": 105,
+        "y": 240,
+        "wires": [
+            [
+                "sd_DHY7h2O8Fq0xKTeO"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "chatuiComponent"
+    },
+    {
+        "id": "sd_l0ge4wGAqHKqH7uu",
+        "type": "PageStart",
+        "z": "sd_Cr7G5phrw9t1BQMQ",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "to go back",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "toGoBack",
+        "category": "General",
+        "x": 100,
+        "y": 700,
+        "wires": [
+            [
+                "sd_cQiA7YIOeDwYdXMt"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "chatuiComponent"
+    },
+    {
+        "id": "sd_cQiA7YIOeDwYdXMt",
+        "type": "Script",
+        "z": "sd_Cr7G5phrw9t1BQMQ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "this.messages = []\nthis.showContactsChange.emit()",
+        "functionName": "sd_cQiA7YIOeDwYdXMt",
+        "category": "Function",
+        "x": 205,
+        "y": 700,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "chatuiComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_n9FllMMYVgDOKyeR",
+        "type": "Script",
+        "z": "sd_Cr7G5phrw9t1BQMQ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.msg = ''",
+        "functionName": "sd_n9FllMMYVgDOKyeR",
+        "category": "Function",
+        "x": 480,
+        "y": 580,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "chatuiComponent",
+        "generated": true
+    }
+]

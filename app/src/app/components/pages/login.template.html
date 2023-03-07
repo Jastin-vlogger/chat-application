@@ -1,0 +1,16 @@
+<bh-navbar></bh-navbar>
+<div fxLayout="column wrap" class="padding-2" fxLayoutAlign="center stretch" [fxShow]="true"><bh-heading [heading]="{header:&apos;LOGIN TO THE CHATBOX&apos;}"></bh-heading><bh-paragraph [paragraph]="{para:&apos;Welcome back! Sign in using your social account or email to continue us&apos;}"></bh-paragraph>
+  <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;never&apos;" [hideRequiredMarker]="false">
+    <input matInput [(ngModel)]="page.inputEmail" placeholder="Email" [required]="false" pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$">
+
+  </mat-form-field>
+  <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+    <input matInput [(ngModel)]="page.passwordInput" placeholder="password" [required]="false">
+
+  </mat-form-field>
+  <div fxLayout="column wrap" fxLayoutGap="1em" fxLayoutAlign="center center" [fxShow]="true"><mat-divider>
+    </mat-divider><bh-button [buttonName]="{name:&apos;LOGIN&apos;}" (click)="sendRequestToBackendLogin()"></bh-button>
+    <p>
+      Login with Neutrinos</p><img imgSrc="/Web/Icons/favicon.png" style="width:100px;height:100px;cursor:pointer;" (click)="login()">
+  </div>
+</div>

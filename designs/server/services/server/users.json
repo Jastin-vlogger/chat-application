@@ -1,0 +1,218 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_m0hZj2jz1zkptJU7",
+        "type": "tab",
+        "createdDate": "2023-03-03T07:35:44.634Z",
+        "label": "users",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "users",
+        "relativeParentPath": "server"
+    },
+    {
+        "id": "sd_UL5x2QohTGrTYhca",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_m0hZj2jz1zkptJU7",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "get messages",
+        "path": "/getMessages",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "IDSAuthroizedAPIs",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "erd": "_DM_q9lyaw05a",
+        "erdName": "users",
+        "entity": "messages",
+        "ref": "#/definitions/users ~ messages",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 105,
+        "y": 100,
+        "wires": [
+            [
+                "sd_781617gYMcJxKqMd"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "users",
+        "functionName": "sd_UL5x2QohTGrTYhca"
+    },
+    {
+        "id": "sd_781617gYMcJxKqMd",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_m0hZj2jz1zkptJU7",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.input.body);\n\nbh.local.query = {\n    users: { $all: [bh.input.body.from, bh.input.body.to] }\n} ",
+        "functionName": "sd_781617gYMcJxKqMd",
+        "category": "Function",
+        "x": 205,
+        "y": 100,
+        "wires": [
+            [
+                "sd_Qcxj3Krw1QeL5PMD"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "users",
+        "generated": true
+    },
+    {
+        "id": "sd_Qcxj3Krw1QeL5PMD",
+        "type": "Mongodb",
+        "z": "SSD_SERVICE_ID_sd_m0hZj2jz1zkptJU7",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_Vg1PCIdliHqSslUW",
+        "collection": "\"messages\"",
+        "options": "",
+        "resultMapping": "bh.result",
+        "operation": "find",
+        "argumentArray": [
+            "query"
+        ],
+        "aggregate": "",
+        "operations": "",
+        "query": "bh.local.query",
+        "fieldOrSpec": "",
+        "filter": "",
+        "key": "",
+        "docId": "",
+        "indexName": "",
+        "replacement": "",
+        "update": "",
+        "xAxis": "",
+        "yAxis": "",
+        "indexes": "",
+        "docs": "",
+        "document": "bh.local.message",
+        "newName": "",
+        "doc": "",
+        "filePath": "",
+        "fileName": "",
+        "pipeline": "",
+        "functionName": "sd_Qcxj3Krw1QeL5PMD",
+        "category": "Storage",
+        "x": 325,
+        "y": 100,
+        "wires": [
+            [
+                "sd_hs8vL2lQLQN0OnHk"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "collection": {
+                "type": "str",
+                "value": "messages",
+                "constant": false
+            },
+            "options": {
+                "type": "bh",
+                "value": "",
+                "nullable": "true",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "bh",
+                "value": "result",
+                "constant": false
+            },
+            "query": {
+                "type": "bh.local",
+                "value": "query",
+                "constant": false
+            },
+            "document": {
+                "type": "bh.local",
+                "value": "message",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "users",
+        "generated": true
+    },
+    {
+        "id": "sd_hs8vL2lQLQN0OnHk",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_m0hZj2jz1zkptJU7",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.result",
+            "send": "bh.result"
+        },
+        "dataModelIsArray": false,
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_hs8vL2lQLQN0OnHk",
+        "category": "HTTP",
+        "x": 440,
+        "y": 100,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "users",
+        "generated": true
+    }
+]

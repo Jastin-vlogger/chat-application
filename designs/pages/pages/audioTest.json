@@ -1,0 +1,152 @@
+[
+    {
+        "id": "sd_ssE6YEwPi2OWIlwG",
+        "type": "tab",
+        "createdDate": "2023-03-06T12:46:18.218Z",
+        "label": "audioTest",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "audioTestComponent"
+    },
+    {
+        "id": "sd_c8KsLHt410oTzFis",
+        "type": "OnInit",
+        "z": "sd_ssE6YEwPi2OWIlwG",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "inputVariables": [],
+        "localVariables": [],
+        "outputVariables": [],
+        "pageVariables": [
+            {
+                "key": "url",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                }
+            }
+        ],
+        "functionName": "sd_c8KsLHt410oTzFis",
+        "category": "Lifecycle Events",
+        "x": 45,
+        "y": 80,
+        "wires": [
+            [
+                "sd_NR7gqqi3gbjohLwm"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "audioTestComponent"
+    },
+    {
+        "id": "sd_NR7gqqi3gbjohLwm",
+        "type": "PageVariables",
+        "z": "sd_ssE6YEwPi2OWIlwG",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_NR7gqqi3gbjohLwm",
+        "category": "Function",
+        "x": 325,
+        "y": 80,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "audioTestComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_khO7p3skDabsNXJ4",
+        "type": "PageStart",
+        "z": "sd_ssE6YEwPi2OWIlwG",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "audioBlob",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "sd_khO7p3skDabsNXJ4",
+        "category": "General",
+        "x": 60,
+        "y": 220,
+        "wires": [
+            [
+                "sd_Adkw7ibAwwDzFMOO"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "audioTestComponent"
+    },
+    {
+        "id": "sd_oAZhZXgFr8EMWJeT",
+        "type": "Script",
+        "z": "sd_ssE6YEwPi2OWIlwG",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "navigator.mediaDevices.getUserMedia({\n  audio: true,\n}).then((stream) => {\n  let options = {\n    mimeType: 'audio/webm',\n    audioBitsPerSecond: 128000,\n  };\n  let recorder =  new RecordRTC.StereoAudioRecorder(stream, {\n      type: 'audio',\n      mimeType: 'audio/mp3'\n    });\n  recorder.record();\n  setTimeout(() => {\n    recorder.stop(() => {\n      let blob = recorder.blob;\n      page.audio = {\n        type: blob.type,\n        url: URL.createObjectURL(blob)\n      }\n    });\n  }, 5000); // Stop recording after 5 seconds\n}).catch((err) => {\n  console.log(err)\n})\n\n",
+        "functionName": "sd_oAZhZXgFr8EMWJeT",
+        "category": "Function",
+        "x": 225,
+        "y": 220,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "audioTestComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_Adkw7ibAwwDzFMOO",
+        "type": "UseDependency",
+        "z": "sd_ssE6YEwPi2OWIlwG",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "property": "RecordRTC",
+        "propertyType": "bh",
+        "propertyGv": "bh.RecordRTC",
+        "alias": "RecordRTC",
+        "modules": [],
+        "import_all": true,
+        "library": "recordrtc",
+        "serviceDesignerType": "pages",
+        "functionName": "sd_Adkw7ibAwwDzFMOO",
+        "category": "Function",
+        "x": 145,
+        "y": 220,
+        "wires": [
+            [
+                "sd_oAZhZXgFr8EMWJeT"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "audioTestComponent",
+        "generated": true
+    }
+]

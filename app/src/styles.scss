@@ -1,0 +1,218 @@
+/*Importing default angular material css theme. */
+
+@import "@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "nDefaults.scss";
+
+@import "theme.scss";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,500;0,600;1,400&display=swap');
+
+.padding-2 {
+    padding: 2em;
+}
+
+.padding-1{
+    padding:1em;
+}
+
+.mat-button {
+    background-color: var(--primary-color);
+    color: var(--text-primary-color);
+}
+
+.accent-color{
+    background-color: #bfbdbd;
+}
+
+.textColor {
+    color: black;
+}
+
+
+.contact{
+    flex: 1;
+    background-color: whitesmoke;
+}
+
+@media screen and (max-width: 500px) {
+    .chat_container {
+    display: none;
+    }
+}
+
+@media screen and (min-width: 600px){
+    .show{
+        display: block;
+    }
+}
+
+.hide {
+  display: none;
+}
+ 
+.show {
+  display: block;
+}
+
+@media only screen and (min-width: 501px) {
+  .container {
+    display: flex;
+  }
+  .contact-section {
+    flex: 1;
+  }
+  .chat-section {
+    flex: 1;
+  }
+}
+
+
+@media only screen and (max-width: 500px) {
+  .container {
+    display: block;
+  }
+  .contact-section {
+    display: block !important;
+  }
+  .chat-section {
+    display: none !important;
+  }
+  .contact-section.hidden {
+    display: none !important;
+  }
+  .chat-section.hidden {
+    display: block !important;
+  }
+}
+
+.chat-ui {
+    background-color: #ffffff;
+}
+
+.user{
+    cursor: pointer;
+    background-color: whitesmoke;
+    border-radius:5px;
+    padding:5px;
+}
+
+.user:hover{
+    background-color: #bfbdbd;
+}
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+
+}
+
+.chat-container {
+  background-color: #f2f2f2;
+}
+
+.chat-box {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.received {
+  align-self: flex-start;
+  background-color: #e6e6e6;
+}
+
+.sent {
+  align-self: flex-end;
+  background-color: #20A090;
+  color: #fff;
+}
+
+.time {
+  align-self: flex-end;
+  font-size: 11px;
+  color: #666;
+}
+
+
+.w-input-container {
+  width: auto;
+  min-height: 20px;
+  box-sizing: border-box;
+  padding: 9px 18px 11px;
+  margin: 5px 10px;
+  background-color: #fff;
+  border: 1px solid #fff;
+  border-radius: 21px;
+}
+
+.w-placeholder {
+  color: #a0a0a0;
+  top: 0;
+  pointer-events: none;
+  user-select: none;
+  position: absolute;
+  opacity: 0;
+  transition: 0.2s padding ease-in-out;
+}
+
+.w-input-text {
+  overflow-x: hidden;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  z-index: 1;
+  max-height: 100px;
+  min-height: 20px;
+  padding: 0 0 0 2px;
+  outline: 0;
+  transition: 0.2s padding ease-in-out;
+}
+
+.w-input-text:empty + .w-placeholder {
+  opacity: 1;
+}
+
+.w-input-text:focus + .w-placeholder {
+  padding: 0 6px 0px;
+}
+
+.w-input-text:focus {
+  padding: 0 6px 0px;
+}
+
+@media only screen and (max-width: 701px) {
+  .showContacts{
+    display: none !important;
+  }
+}
+
+.selected{
+        background-color: #bfbdbd;
+
+}
+
+.welcome{
+    width:100%;
+    flex:2;
+    height: calc( 100vh - 56px );
+    background-image: url('https://i.pinimg.com/564x/8c/98/99/8c98994518b575bfd8c949e91d20548b.jpg')
+}
+
+.contact{
+    flex:1;
+    background-color:whites;
+    height: calc( 100vh - 56px );
+    padding: 3px;
+}
+
+.font-4{
+    font-size: 20px;
+}
+
+.header{
+    background-color: white;
+}

@@ -1,0 +1,143 @@
+[
+    {
+        "id": "sd_paf711dGrp0AyMM8",
+        "type": "tab",
+        "createdDate": "2023-03-01T09:36:01.785Z",
+        "label": "messages",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "messagesComponent"
+    },
+    {
+        "id": "sd_am2mPnj1YU6KMylQ",
+        "type": "OnInit",
+        "z": "sd_paf711dGrp0AyMM8",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "inputVariables": [
+            {
+                "key": "messages",
+                "defaultValue": {
+                    "type": "any",
+                    "value": "[]"
+                }
+            },
+            {
+                "key": "currentUser",
+                "defaultValue": {
+                    "type": "any",
+                    "value": "''"
+                }
+            },
+            {
+                "key": "user",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                }
+            }
+        ],
+        "localVariables": [],
+        "outputVariables": [
+            {
+                "key": "changeEvent",
+                "defaultValue": {
+                    "type": "any",
+                    "value": null
+                }
+            }
+        ],
+        "pageVariables": [],
+        "functionName": "sd_am2mPnj1YU6KMylQ",
+        "category": "Lifecycle Events",
+        "x": 85,
+        "y": 60,
+        "wires": [
+            [
+                "sd_KnMX3A08hekEj7Ge"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "messagesComponent"
+    },
+    {
+        "id": "sd_KnMX3A08hekEj7Ge",
+        "type": "PageVariables",
+        "z": "sd_paf711dGrp0AyMM8",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_KnMX3A08hekEj7Ge",
+        "category": "Function",
+        "x": 235,
+        "y": 60,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "messagesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_eWKA8uSMnYvHxC7e",
+        "type": "PageStart",
+        "z": "sd_paf711dGrp0AyMM8",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "func",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "event",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "func",
+        "category": "General",
+        "x": 85,
+        "y": 220,
+        "wires": [
+            [
+                "sd_7EslN2Ltrp0hEHeE"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "messagesComponent"
+    },
+    {
+        "id": "sd_7EslN2Ltrp0hEHeE",
+        "type": "Script",
+        "z": "sd_paf711dGrp0AyMM8",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "this.changeEvent.emit(bh.input.event)",
+        "functionName": "sd_7EslN2Ltrp0hEHeE",
+        "category": "Function",
+        "x": 245,
+        "y": 220,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "messagesComponent",
+        "generated": true
+    }
+]
