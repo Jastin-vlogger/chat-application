@@ -207,7 +207,7 @@
         "y": 220,
         "wires": [
             [
-                "sd_fnEt7QkIpcekZaOC"
+                "sd_MPVSVQFXN25cryU2"
             ]
         ],
         "__ssdTypeInputs__": {
@@ -940,65 +940,6 @@
         "x": 460,
         "y": 480,
         "wires": [],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "login",
-        "generated": true
-    },
-    {
-        "id": "sd_fnEt7QkIpcekZaOC",
-        "type": "Session",
-        "z": "SSD_SERVICE_ID_sd_uVwNpKUSlSUYBMYa",
-        "viewType": "server",
-        "nodeType": "flow",
-        "name": "",
-        "operationType": "update",
-        "data": "",
-        "resultMapping": "bh",
-        "dataMapping": "bh.result",
-        "functionName": "sd_fnEt7QkIpcekZaOC",
-        "category": "HTTP",
-        "x": 700,
-        "y": 220,
-        "wires": [
-            [
-                "sd_sEUA2ob2Y1EUx3KP"
-            ]
-        ],
-        "__ssdTypeInputs__": {
-            "resultMapping": {
-                "type": "bh",
-                "value": "",
-                "constant": false
-            },
-            "dataMapping": {
-                "type": "bh",
-                "value": "result",
-                "constant": false
-            }
-        },
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "login",
-        "generated": true
-    },
-    {
-        "id": "sd_sEUA2ob2Y1EUx3KP",
-        "type": "Script",
-        "z": "SSD_SERVICE_ID_sd_uVwNpKUSlSUYBMYa",
-        "viewType": "common",
-        "nodeType": "flow",
-        "name": "",
-        "script": "console.log(bh.result ,\"++++++++++===\")",
-        "functionName": "sd_sEUA2ob2Y1EUx3KP",
-        "category": "Function",
-        "x": 780,
-        "y": 220,
-        "wires": [
-            [
-                "sd_MPVSVQFXN25cryU2"
-            ]
-        ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
         "serviceName": "login",

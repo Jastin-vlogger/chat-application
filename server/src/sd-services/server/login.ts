@@ -339,7 +339,7 @@ export class login {
         {}
       );
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_fnEt7QkIpcekZaOC(bh, parentSpanInst);
+      await this.loginSucess(bh, parentSpanInst);
       //appendnew_next_sd_7RsJxY5DdtljZZN2
       return bh;
     } catch (e) {
@@ -349,53 +349,6 @@ export class login {
         'sd_7RsJxY5DdtljZZN2',
         spanInst,
         'sd_7RsJxY5DdtljZZN2'
-      );
-    }
-  }
-
-  async sd_fnEt7QkIpcekZaOC(bh, parentSpanInst) {
-    const spanInst = this.tracerService.createSpan(
-      'sd_fnEt7QkIpcekZaOC',
-      parentSpanInst
-    );
-    try {
-      let requestObject = bh.web.req;
-      if (requestObject.session) {
-        requestObject.session.data = bh.result;
-      }
-      this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_sEUA2ob2Y1EUx3KP(bh, parentSpanInst);
-      //appendnew_next_sd_fnEt7QkIpcekZaOC
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(
-        bh,
-        e,
-        'sd_fnEt7QkIpcekZaOC',
-        spanInst,
-        'sd_fnEt7QkIpcekZaOC'
-      );
-    }
-  }
-
-  async sd_sEUA2ob2Y1EUx3KP(bh, parentSpanInst) {
-    const spanInst = this.tracerService.createSpan(
-      'sd_sEUA2ob2Y1EUx3KP',
-      parentSpanInst
-    );
-    try {
-      console.log(bh.result, '++++++++++===');
-      this.tracerService.sendData(spanInst, bh);
-      await this.loginSucess(bh, parentSpanInst);
-      //appendnew_next_sd_sEUA2ob2Y1EUx3KP
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(
-        bh,
-        e,
-        'sd_sEUA2ob2Y1EUx3KP',
-        spanInst,
-        'sd_sEUA2ob2Y1EUx3KP'
       );
     }
   }
