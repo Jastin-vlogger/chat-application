@@ -108,7 +108,7 @@
             ]
         },
         "showOriginToggleButton": false,
-        "credentials": true,
+        "credentials": false,
         "maxAge": "",
         "preflightContinue": false,
         "optionsSuccessStatus": "",
@@ -137,7 +137,7 @@
         "cookieHttpOnly": false,
         "cookieMaxAge": "15 * 24 * 60 * 60 * 1000 ",
         "cookiePath": "",
-        "cookieSameSite": "\"none\"",
+        "cookieSameSite": "\"lax\"",
         "proxy": false,
         "resave": false,
         "rolling": false,

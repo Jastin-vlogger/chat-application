@@ -11,7 +11,7 @@ export let Middlewares = {
       origin: ['http://localhost:4200'],
       methods: ['POST', 'GET', 'DELETE', 'PATCH'],
 
-      credentials: true,
+      credentials: false,
 
       preflightContinue: false,
     };
@@ -23,7 +23,7 @@ export let Middlewares = {
         secure: false,
         httpOnly: false,
         maxAge: 15 * 24 * 60 * 60 * 1000,
-        sameSite: 'none',
+        sameSite: 'lax',
       },
 
       proxy: false,
