@@ -8,13 +8,9 @@ import { getConnection } from 'typeorm'; //_splitter_
 export let Middlewares = {
   cors: () => {
     let corsOptions = {
-      origin: [
-        'http://localhost:4200',
-        'https://chatwithmefrontend.onrender.com/',
-      ],
       methods: ['POST', 'GET', 'DELETE', 'PATCH'],
 
-      credentials: false,
+      credentials: true,
 
       preflightContinue: false,
     };
@@ -22,14 +18,9 @@ export let Middlewares = {
   },
   sd_7EmxxOk703exD5hF: () => {
     let sess: expressSession.SessionOptions = {
-      cookie: {
-        secure: false,
-        httpOnly: false,
-        maxAge: 15 * 24 * 60 * 60 * 1000,
-        sameSite: 'lax',
-      },
+      cookie: { secure: true, httpOnly: false, sameSite: 'none' },
 
-      proxy: false,
+      proxy: true,
 
       resave: false,
 

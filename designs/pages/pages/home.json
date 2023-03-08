@@ -80,7 +80,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "console.log(page.system.oauthService.userInfo , \"+++++++++\")\n\n  page.socket = page.io('https://chatwithme-1c2d.onrender.com');\n      page.socket.on('connection', (data) => {\n        console.log('Connected to server' + data);\n      });\n      page.socket.current = io('https://chatwithme-1c2d.onrender.com');\n      page.socket.current.emit(\"add-user\", bh.system.currentUser.username);\n",
+        "script": "console.log(page.system.oauthService , \"+++++++++\")\n\n  page.socket = page.io('https://chatwithme-1c2d.onrender.com');\n      page.socket.on('connection', (data) => {\n        console.log('Connected to server' + data);\n      });\n      page.socket.current = io('https://chatwithme-1c2d.onrender.com');\n      page.socket.current.emit(\"add-user\", bh.system.currentUser.username);\n",
         "functionName": "sd_tkDNX2QuSc92w5ZV",
         "category": "Function",
         "x": 225,

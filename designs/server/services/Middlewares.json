@@ -8,8 +8,7 @@
         "info": "",
         "generateNext": true,
         "serviceName": "Middlewares",
-        "relativeParentPath": "",
-        "viewType": "server"
+        "relativeParentPath": ""
     },
     {
         "id": "ssd_global_middleware_start_id",
@@ -99,23 +98,10 @@
             ],
             "allowedHeaders": [],
             "exposedHeaders": [],
-            "origin": [
-                {
-                    "key": "http://localhost:4200",
-                    "rowId": "sd_7TatCmJmoUOhvvhI",
-                    "valid": true,
-                    "type": "str"
-                },
-                {
-                    "key": "https://chatwithmefrontend.onrender.com/",
-                    "rowId": "sd_7tJToRF3YNDK5TKl",
-                    "valid": true,
-                    "type": "str"
-                }
-            ]
+            "origin": []
         },
         "showOriginToggleButton": false,
-        "credentials": false,
+        "credentials": true,
         "maxAge": "",
         "preflightContinue": false,
         "optionsSuccessStatus": "",
@@ -139,13 +125,13 @@
         "nodeType": "middleware",
         "name": "Global Session",
         "cookieDomain": "",
-        "cookieSecure": false,
+        "cookieSecure": true,
         "cookieExpires": "",
         "cookieHttpOnly": false,
-        "cookieMaxAge": "15 * 24 * 60 * 60 * 1000 ",
+        "cookieMaxAge": "",
         "cookiePath": "",
-        "cookieSameSite": "\"lax\"",
-        "proxy": false,
+        "cookieSameSite": "\"none\"",
+        "proxy": true,
         "resave": false,
         "rolling": false,
         "saveUninitialized": false,

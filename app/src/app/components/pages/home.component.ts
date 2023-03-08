@@ -128,7 +128,7 @@ export class homeComponent {
   sd_tkDNX2QuSc92w5ZV(bh) {
     try {
       const page = this.page;
-      console.log(page.system.oauthService.userInfo, '+++++++++');
+      console.log(page.system.oauthService, '+++++++++');
 
       page.socket = page.io('https://chatwithme-1c2d.onrender.com');
       page.socket.on('connection', (data) => {
