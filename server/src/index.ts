@@ -127,6 +127,7 @@ console.log('process.env.pm_id', process.env.pm_id);
 
         io.on("connection", (socket) => {
             log.info("connected socket");
+            
             socket.emit('connection', 'ni poda')
             // adding user
             global.chatSocket = socket;

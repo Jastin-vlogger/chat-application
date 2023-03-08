@@ -73,7 +73,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "console.log(bh.input.body)\n\nbh.local.email = bh.input.body.email;\nbh.local.query = {email:bh.local.email}\n",
+        "script": "console.log(bh.input.body)\n\nconsole.log(bh.web.req.session ,\"session\")\nbh.local.email = bh.input.body.email;\nbh.local.query = {email:bh.local.email}\n\n",
         "functionName": "sd_oy1g61hUGqDMliGt",
         "category": "Function",
         "x": 225,

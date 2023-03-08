@@ -205,6 +205,7 @@ export class login {
     try {
       console.log(bh.input.body);
 
+      console.log(bh.web.req.session, 'session');
       bh.local.email = bh.input.body.email;
       bh.local.query = { email: bh.local.email };
 
