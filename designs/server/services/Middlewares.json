@@ -98,10 +98,17 @@
             ],
             "allowedHeaders": [],
             "exposedHeaders": [],
-            "origin": []
+            "origin": [
+                {
+                    "key": "http://localhost:4200",
+                    "rowId": "sd_Pw61Js7tVsKmx2ni",
+                    "valid": true,
+                    "type": "str"
+                }
+            ]
         },
         "showOriginToggleButton": false,
-        "credentials": true,
+        "credentials": false,
         "maxAge": "",
         "preflightContinue": false,
         "optionsSuccessStatus": "",
@@ -125,13 +132,13 @@
         "nodeType": "middleware",
         "name": "Global Session",
         "cookieDomain": "",
-        "cookieSecure": true,
+        "cookieSecure": false,
         "cookieExpires": "",
         "cookieHttpOnly": false,
         "cookieMaxAge": "",
         "cookiePath": "",
-        "cookieSameSite": "\"none\"",
-        "proxy": true,
+        "cookieSameSite": "\"lax\"",
+        "proxy": false,
         "resave": false,
         "rolling": false,
         "saveUninitialized": false,

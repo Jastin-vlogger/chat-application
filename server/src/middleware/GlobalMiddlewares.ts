@@ -8,9 +8,10 @@ import { getConnection } from 'typeorm'; //_splitter_
 export let Middlewares = {
   cors: () => {
     let corsOptions = {
+      origin: ['http://localhost:4200'],
       methods: ['POST', 'GET', 'DELETE', 'PATCH'],
 
-      credentials: true,
+      credentials: false,
 
       preflightContinue: false,
     };
@@ -18,9 +19,9 @@ export let Middlewares = {
   },
   sd_7EmxxOk703exD5hF: () => {
     let sess: expressSession.SessionOptions = {
-      cookie: { secure: true, httpOnly: false, sameSite: 'none' },
+      cookie: { secure: false, httpOnly: false, sameSite: 'lax' },
 
-      proxy: true,
+      proxy: false,
 
       resave: false,
 
