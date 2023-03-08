@@ -9,6 +9,7 @@ export const environment = {
         "useDefaultExceptionUI": true,
         "isIDSEnabled": "false",
         "webAppMountpoint": "web",
-        "NGFORAGE_MOBILE_DRIVER": "INDEXED_DB"
+        "NGFORAGE_MOBILE_DRIVER": "INDEXED_DB",
+        "ip": "10.10.11.149"
     }
 }

@@ -8,7 +8,7 @@ import { getConnection } from 'typeorm'; //_splitter_
 export let Middlewares = {
   cors: () => {
     let corsOptions = {
-      origin: ['http://localhost:4200'],
+      origin: ['10.10.11.149'],
       methods: ['POST', 'GET', 'DELETE', 'PATCH', 'OPTIONS'],
       allowedHeaders: ['Content-Type'],
 

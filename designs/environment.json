@@ -13,7 +13,8 @@
             "SSD_DEFAULT_PORT": "server",
             "webAppMountpoint": "both",
             "CLOCK_TOLERANCE": "server",
-            "NGFORAGE_MOBILE_DRIVER": "client"
+            "NGFORAGE_MOBILE_DRIVER": "client",
+            "ip": "both"
         }
     },
     "dev": {
@@ -30,7 +31,8 @@
             "SSD_DEFAULT_PORT": "8081",
             "webAppMountpoint": "web",
             "CLOCK_TOLERANCE": "5",
-            "NGFORAGE_MOBILE_DRIVER": "INDEXED_DB"
+            "NGFORAGE_MOBILE_DRIVER": "INDEXED_DB",
+            "ip": "10.10.11.149"
         }
     },
     "prod": {
@@ -47,7 +49,8 @@
             "SSD_DEFAULT_PORT": "8081",
             "webAppMountpoint": "web",
             "CLOCK_TOLERANCE": "5",
-            "NGFORAGE_MOBILE_DRIVER": "INDEXED_DB"
+            "NGFORAGE_MOBILE_DRIVER": "INDEXED_DB",
+            "ip": "10.10.11.149"
         }
     }
 }

@@ -111,7 +111,7 @@
             "exposedHeaders": [],
             "origin": [
                 {
-                    "key": "http://localhost:4200",
+                    "key": "10.10.11.149",
                     "rowId": "sd_2eveF94VAPRTGwTw",
                     "valid": true,
                     "type": "str"
@@ -160,8 +160,8 @@
         "store": "memory",
         "functionName": "sd_7EmxxOk703exD5hF",
         "category": "Global",
-        "x": 421,
-        "y": 102.8125,
+        "x": 385,
+        "y": 100,
         "wires": [
             [
                 "sd_Tp9jNbUvUZ1kJnAn"
