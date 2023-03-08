@@ -2,7 +2,7 @@ export const environment = {
     "name": "prod",
     "properties": {
         "production": true,
-        "ssdURL": "https://chatwithme-1c2d.onrender.com/api/",
+        "ssdURL": "http://localhost:8081/api/",
         "tenantName": "neutrinos",
         "appName": "sample",
         "namespace": "com.neutrinos.sample",

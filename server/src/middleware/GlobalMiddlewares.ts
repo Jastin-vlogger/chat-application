@@ -8,21 +8,24 @@ import { getConnection } from 'typeorm'; //_splitter_
 export let Middlewares = {
   cors: () => {
     let corsOptions = {
-      origin: ['10.10.11.149'],
+      origin: [
+        'http://127.0.0.1:4200',
+        'http://localhost:4200',
+        'https://chatwithme-1c2d.onrender.com',
+      ],
       methods: ['POST', 'GET', 'DELETE', 'PATCH', 'OPTIONS'],
-      allowedHeaders: ['Content-Type'],
 
       credentials: true,
-
-      preflightContinue: true,
+      maxAge: 2592000000,
+      preflightContinue: false,
     };
     return cors(corsOptions);
   },
   sd_7EmxxOk703exD5hF: () => {
     let sess: expressSession.SessionOptions = {
-      cookie: { secure: false, httpOnly: false, sameSite: 'lax' },
+      cookie: { secure: true, httpOnly: false, sameSite: 'none' },
 
-      proxy: false,
+      proxy: true,
 
       resave: false,
 

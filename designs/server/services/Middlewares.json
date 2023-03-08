@@ -101,18 +101,24 @@
                     "valid": true
                 }
             ],
-            "allowedHeaders": [
-                {
-                    "key": "Content-Type",
-                    "rowId": "sd_YXCUtEjqi1g6m8QX",
-                    "valid": true
-                }
-            ],
+            "allowedHeaders": [],
             "exposedHeaders": [],
             "origin": [
                 {
-                    "key": "10.10.11.149",
-                    "rowId": "sd_2eveF94VAPRTGwTw",
+                    "key": "http://127.0.0.1:4200",
+                    "rowId": "sd_oGJeB5WNYn8osEUh",
+                    "valid": true,
+                    "type": "str"
+                },
+                {
+                    "key": "http://localhost:4200",
+                    "rowId": "sd_I05XFHR2Zr9urL5L",
+                    "valid": true,
+                    "type": "str"
+                },
+                {
+                    "key": "https://chatwithme-1c2d.onrender.com",
+                    "rowId": "sd_BNvJ14WyaIALa2H2",
                     "valid": true,
                     "type": "str"
                 }
@@ -120,8 +126,8 @@
         },
         "showOriginToggleButton": false,
         "credentials": true,
-        "maxAge": "",
-        "preflightContinue": true,
+        "maxAge": "2592000000",
+        "preflightContinue": false,
         "optionsSuccessStatus": "",
         "functionName": "cors",
         "category": "Global",
@@ -143,13 +149,13 @@
         "nodeType": "middleware",
         "name": "Global Session",
         "cookieDomain": "",
-        "cookieSecure": false,
+        "cookieSecure": true,
         "cookieExpires": "",
         "cookieHttpOnly": false,
         "cookieMaxAge": "",
         "cookiePath": "",
-        "cookieSameSite": "\"lax\"",
-        "proxy": false,
+        "cookieSameSite": "\"none\"",
+        "proxy": true,
         "resave": false,
         "rolling": false,
         "saveUninitialized": false,
@@ -160,7 +166,7 @@
         "store": "memory",
         "functionName": "sd_7EmxxOk703exD5hF",
         "category": "Global",
-        "x": 385,
+        "x": 425,
         "y": 100,
         "wires": [
             [
