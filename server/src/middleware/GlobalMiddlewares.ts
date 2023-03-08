@@ -11,7 +11,7 @@ export let Middlewares = {
       origin: ['http://localhost:4200'],
       methods: ['POST', 'GET', 'DELETE', 'PATCH'],
 
-      credentials: false,
+      credentials: true,
 
       preflightContinue: false,
     };

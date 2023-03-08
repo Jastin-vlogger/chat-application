@@ -108,7 +108,7 @@
             ]
         },
         "showOriginToggleButton": false,
-        "credentials": false,
+        "credentials": true,
         "maxAge": "",
         "preflightContinue": false,
         "optionsSuccessStatus": "",
