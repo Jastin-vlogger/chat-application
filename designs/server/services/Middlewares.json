@@ -94,9 +94,20 @@
                     "key": "PATCH",
                     "rowId": "sd_AOuwQ6y5UNODB48a",
                     "valid": true
+                },
+                {
+                    "key": "OPTIONS",
+                    "rowId": "sd_saHtdVNFILdD1jdl",
+                    "valid": true
                 }
             ],
-            "allowedHeaders": [],
+            "allowedHeaders": [
+                {
+                    "key": "Content-Type",
+                    "rowId": "sd_YXCUtEjqi1g6m8QX",
+                    "valid": true
+                }
+            ],
             "exposedHeaders": [],
             "origin": [
                 {
@@ -110,7 +121,7 @@
         "showOriginToggleButton": false,
         "credentials": true,
         "maxAge": "",
-        "preflightContinue": false,
+        "preflightContinue": true,
         "optionsSuccessStatus": "",
         "functionName": "cors",
         "category": "Global",
