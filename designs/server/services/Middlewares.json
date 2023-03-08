@@ -8,8 +8,7 @@
         "info": "",
         "generateNext": true,
         "serviceName": "Middlewares",
-        "relativeParentPath": "",
-        "viewType": "server"
+        "relativeParentPath": ""
     },
     {
         "id": "ssd_global_middleware_start_id",
@@ -133,12 +132,12 @@
         "nodeType": "middleware",
         "name": "Global Session",
         "cookieDomain": "",
-        "cookieSecure": false,
+        "cookieSecure": true,
         "cookieExpires": "",
         "cookieHttpOnly": false,
         "cookieMaxAge": "15 * 24 * 60 * 60 * 1000 ",
         "cookiePath": "",
-        "cookieSameSite": "\"lax\"",
+        "cookieSameSite": "false",
         "proxy": false,
         "resave": false,
         "rolling": false,
