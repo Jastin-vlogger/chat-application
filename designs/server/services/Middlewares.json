@@ -104,6 +104,12 @@
                     "rowId": "sd_7TatCmJmoUOhvvhI",
                     "valid": true,
                     "type": "str"
+                },
+                {
+                    "key": "https://chatwithmefrontend.onrender.com/",
+                    "rowId": "sd_7tJToRF3YNDK5TKl",
+                    "valid": true,
+                    "type": "str"
                 }
             ]
         },
