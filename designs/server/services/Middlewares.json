@@ -80,7 +80,7 @@
             "origin": []
         },
         "showOriginToggleButton": false,
-        "credentials": true,
+        "credentials": false,
         "maxAge": "2592000000",
         "preflightContinue": false,
         "optionsSuccessStatus": "",

@@ -8,7 +8,7 @@ import { getConnection } from 'typeorm'; //_splitter_
 export let Middlewares = {
   cors: () => {
     let corsOptions = {
-      credentials: true,
+      credentials: false,
       maxAge: 2592000000,
       preflightContinue: false,
     };
