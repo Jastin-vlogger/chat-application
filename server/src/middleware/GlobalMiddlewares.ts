@@ -9,11 +9,10 @@ export let Middlewares = {
   cors: () => {
     let corsOptions = {
       origin: [
-        'http://127.0.0.1:4200/',
-        'http://localhost:4200/',
-        'https://chatwithme-1c2d.onrender.com/',
+        'http://127.0.0.1:4200',
+        'http://localhost:4200',
+        'https://chatwithme-1c2d.onrender.com',
       ],
-      methods: ['POST', 'GET', 'DELETE', 'PATCH', 'OPTIONS'],
 
       credentials: true,
       maxAge: 2592000000,
