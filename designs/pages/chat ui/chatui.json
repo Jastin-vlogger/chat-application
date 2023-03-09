@@ -519,5 +519,36 @@
         "generateNext": false,
         "serviceName": "chatuiComponent",
         "generated": true
+    },
+    {
+        "id": "sd_KVDzBSsgq6tTPx6s",
+        "type": "PageStart",
+        "z": "sd_Cr7G5phrw9t1BQMQ",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "audio recorder",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [
+            {
+                "key": "chunks",
+                "defaultValue": {
+                    "type": "any",
+                    "value": "[]"
+                },
+                "output": false
+            }
+        ],
+        "flow_type": "sync",
+        "functionName": "audioRecorder",
+        "category": "General",
+        "x": 105,
+        "y": 800,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "chatuiComponent"
     }
 ]

@@ -1,3 +1,3 @@
-<div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><audio controls [autoplay]="true" [loop]="true" id="audio-player" *ngIf="page.audio">
-    <source src="{{page.audio.url}}" type="audio/webm;codecs=opus">
-  </audio><button mat-button (click)="sd_khO7p3skDabsNXJ4()">start recording</button></div>
+<div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><audio controls [autoplay]="true" [loop]="true" id="audio-player" *ngIf="page.audio" [src]="page.audio">
+    <source src="{{page.audio}}" type="audio/audio/wav">
+  </audio><button mat-button (click)="sd_khO7p3skDabsNXJ4()">start recording</button><button mat-button (click)="stopRecording()">stop</button></div>

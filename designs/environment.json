@@ -15,7 +15,9 @@
             "CLOCK_TOLERANCE": "server",
             "NGFORAGE_MOBILE_DRIVER": "client",
             "ip": "both",
-            "backendUrl": "server"
+            "backendUrl": "server",
+            "usingIP": "server",
+            "socketUrl": "both"
         }
     },
     "dev": {
@@ -34,7 +36,9 @@
             "CLOCK_TOLERANCE": "5",
             "NGFORAGE_MOBILE_DRIVER": "INDEXED_DB",
             "ip": "10.10.11.149",
-            "backendUrl": "http://localhost:4200"
+            "backendUrl": "http://localhost:4200",
+            "usingIP": "http://127.0.0.1:4200",
+            "socketUrl": "http://localhost:8081"
         }
     },
     "prod": {
@@ -53,7 +57,9 @@
             "CLOCK_TOLERANCE": "5",
             "NGFORAGE_MOBILE_DRIVER": "INDEXED_DB",
             "ip": "10.10.11.149",
-            "backendUrl": "http://localhost:4200"
+            "backendUrl": "http://localhost:4200",
+            "usingIP": "http://127.0.0.1:4200",
+            "socketUrl": "http://localhost:8081"
         }
     }
 }

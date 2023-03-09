@@ -79,22 +79,16 @@
             "exposedHeaders": [],
             "origin": [
                 {
-                    "key": "backendUrl",
-                    "rowId": "sd_DXBYXQc2iguRlqnO",
+                    "key": "usingIP",
+                    "rowId": "sd_5Gj6KqWvbEDkcjQB",
                     "valid": true,
                     "type": "process.env"
                 },
                 {
-                    "key": "https://comfy-mandazi-c94129.netlify.app",
-                    "rowId": "sd_JYP3kOgkyDsljuxP",
+                    "key": "backendUrl",
+                    "rowId": "sd_JFcoP8MdpC2oeCqp",
                     "valid": true,
-                    "type": "str"
-                },
-                {
-                    "key": "https://chatwithmefrontend.onrender.com",
-                    "rowId": "sd_jFt5Idt0v6uRnZB2",
-                    "valid": true,
-                    "type": "str"
+                    "type": "process.env"
                 }
             ]
         },
@@ -102,7 +96,7 @@
         "credentials": false,
         "maxAge": "2592000000",
         "preflightContinue": false,
-        "optionsSuccessStatus": "",
+        "optionsSuccessStatus": "200",
         "functionName": "cors",
         "category": "Global",
         "x": 561,
@@ -123,13 +117,13 @@
         "nodeType": "middleware",
         "name": "Global Session",
         "cookieDomain": "",
-        "cookieSecure": false,
+        "cookieSecure": true,
         "cookieExpires": "",
         "cookieHttpOnly": false,
         "cookieMaxAge": "",
         "cookiePath": "",
-        "cookieSameSite": "\"lax\"",
-        "proxy": false,
+        "cookieSameSite": "\"none\"",
+        "proxy": true,
         "resave": false,
         "rolling": false,
         "saveUninitialized": false,

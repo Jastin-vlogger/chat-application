@@ -27,11 +27,7 @@
                             "src/cordova.js",
                             "src/locales",
                             "src/router-patch.js",
-                            {
-                                "glob": "_redirects",
-                                "input": "src",
-                                "output": "/"
-                            }
+                            "src/_redirects"
                         ],
                         "styles": [
                             "src/styles.scss"

@@ -117,11 +117,23 @@ export class homeComponent {
     try {
       this.page.io = io;
 
-      bh = this.sd_tkDNX2QuSc92w5ZV(bh);
+      bh = this.sd_fbtPsC0XB2GiVNJI(bh);
       //appendnew_next_sd_20We0OQUJFrlSZdc
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_20We0OQUJFrlSZdc');
+    }
+  }
+
+  sd_fbtPsC0XB2GiVNJI(bh) {
+    try {
+      this.page.url = bh.system.environment.properties.socketUrl;
+
+      bh = this.sd_tkDNX2QuSc92w5ZV(bh);
+      //appendnew_next_sd_fbtPsC0XB2GiVNJI
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_fbtPsC0XB2GiVNJI');
     }
   }
 
@@ -130,11 +142,11 @@ export class homeComponent {
       const page = this.page;
       console.log(page.system.oauthService, '+++++++++');
 
-      page.socket = page.io('http://localhost:8081');
+      page.socket = page.io(page.url);
       page.socket.on('connection', (data) => {
         console.log('Connected to server' + data);
       });
-      page.socket.current = io('http://localhost:8081/');
+      page.socket.current = io(page.url);
       page.socket.current.emit('add-user', bh.system.currentUser.username);
 
       bh = this.sd_qidpAg8ko6W9l4gm(bh);

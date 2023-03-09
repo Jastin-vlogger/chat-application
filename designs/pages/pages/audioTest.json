@@ -17,7 +17,15 @@
         "viewType": "common",
         "nodeType": "start",
         "name": "",
-        "inputVariables": [],
+        "inputVariables": [
+            {
+                "key": "recorder",
+                "defaultValue": {
+                    "type": "any",
+                    "value": "null"
+                }
+            }
+        ],
         "localVariables": [],
         "outputVariables": [],
         "pageVariables": [
@@ -91,7 +99,7 @@
         "y": 220,
         "wires": [
             [
-                "sd_Adkw7ibAwwDzFMOO"
+                "sd_oAZhZXgFr8EMWJeT"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -105,10 +113,10 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "navigator.mediaDevices.getUserMedia({\n  audio: true,\n}).then((stream) => {\n  let options = {\n    mimeType: 'audio/webm',\n    audioBitsPerSecond: 128000,\n  };\n  let recorder =  new RecordRTC.StereoAudioRecorder(stream, {\n      type: 'audio',\n      mimeType: 'audio/mp3'\n    });\n  recorder.record();\n  setTimeout(() => {\n    recorder.stop(() => {\n      let blob = recorder.blob;\n      page.audio = {\n        type: blob.type,\n        url: URL.createObjectURL(blob)\n      }\n    });\n  }, 5000); // Stop recording after 5 seconds\n}).catch((err) => {\n  console.log(err)\n})\n\n",
+        "script": "\n\nconst startRecording = async () => {\n  const stream = await navigator.mediaDevices.getUserMedia({ audio: true });\n  page.recorder = new MediaRecorder(stream);\n  page.recorder.start();\n};\n\nstartRecording();",
         "functionName": "sd_oAZhZXgFr8EMWJeT",
         "category": "Function",
-        "x": 225,
+        "x": 165,
         "y": 220,
         "wires": [
             []
@@ -119,30 +127,43 @@
         "generated": true
     },
     {
-        "id": "sd_Adkw7ibAwwDzFMOO",
-        "type": "UseDependency",
+        "id": "sd_9hZUfNVTPIpsZW8k",
+        "type": "PageStart",
         "z": "sd_ssE6YEwPi2OWIlwG",
-        "viewType": "client-pages",
-        "nodeType": "flow",
-        "name": "",
-        "inputs": 1,
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "stop recording",
         "outputs": 1,
-        "property": "RecordRTC",
-        "propertyType": "bh",
-        "propertyGv": "bh.RecordRTC",
-        "alias": "RecordRTC",
-        "modules": [],
-        "import_all": true,
-        "library": "recordrtc",
-        "serviceDesignerType": "pages",
-        "functionName": "sd_Adkw7ibAwwDzFMOO",
-        "category": "Function",
-        "x": 145,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "stopRecording",
+        "category": "General",
+        "x": 285,
         "y": 220,
         "wires": [
             [
-                "sd_oAZhZXgFr8EMWJeT"
+                "sd_1aH9s3a2BzqpQFyc"
             ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "audioTestComponent"
+    },
+    {
+        "id": "sd_1aH9s3a2BzqpQFyc",
+        "type": "Script",
+        "z": "sd_ssE6YEwPi2OWIlwG",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "let player = document.querySelector('.audio-player')\nconsole.log(player)\nlet chunks = []\npage.recorder.stop();\npage.recorder.ondataavailable = (event) => {\n  console.log(event.data)\n  chunks.push(event.data);\n};\npage.recorder.onstop = () => {\n  const audioBlob = new Blob(chunks, { type: 'audio/wav' });\n  const audioUrl = URL.createObjectURL(audioBlob);\n  page.audio = audioUrl\n  chunks = [];\n};",
+        "functionName": "sd_1aH9s3a2BzqpQFyc",
+        "category": "Function",
+        "x": 410,
+        "y": 220,
+        "wires": [
+            []
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,

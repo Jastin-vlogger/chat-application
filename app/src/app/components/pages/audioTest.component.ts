@@ -12,7 +12,6 @@ import {
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.service'; //_splitter_
-import * as RecordRTC from 'recordrtc'; //_splitter_
 //append_imports_end
 
 @Component({
@@ -23,6 +22,8 @@ import * as RecordRTC from 'recordrtc'; //_splitter_
   ],
 })
 export class audioTestComponent {
+  @Input('recorder')
+  public recorder: any = null;
   page: any = { dep: {} };
   constructor(
     private __page_injector__: Injector,
@@ -70,10 +71,25 @@ export class audioTestComponent {
       bh.input = { audioBlob: audioBlob };
       bh.local = {};
 
-      bh = this.sd_Adkw7ibAwwDzFMOO(bh);
+      bh = this.sd_oAZhZXgFr8EMWJeT(bh);
       //appendnew_next_sd_khO7p3skDabsNXJ4
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_khO7p3skDabsNXJ4');
+    }
+  }
+
+  stopRecording(...others) {
+    try {
+      var bh: any = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = {};
+      bh.local = {};
+
+      bh = this.sd_1aH9s3a2BzqpQFyc(bh);
+      //appendnew_next_stopRecording
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_9hZUfNVTPIpsZW8k');
     }
   }
 
@@ -88,53 +104,49 @@ export class audioTestComponent {
     }
   }
 
-  sd_Adkw7ibAwwDzFMOO(bh) {
-    try {
-      bh.RecordRTC = RecordRTC;
-
-      bh = this.sd_oAZhZXgFr8EMWJeT(bh);
-      //appendnew_next_sd_Adkw7ibAwwDzFMOO
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_Adkw7ibAwwDzFMOO');
-    }
-  }
-
-  sd_oAZhZXgFr8EMWJeT(bh) {
+  async sd_oAZhZXgFr8EMWJeT(bh) {
     try {
       const page = this.page;
-      navigator.mediaDevices
-        .getUserMedia({
+
+      const startRecording = async () => {
+        const stream = await navigator.mediaDevices.getUserMedia({
           audio: true,
-        })
-        .then((stream) => {
-          let options = {
-            mimeType: 'audio/webm',
-            audioBitsPerSecond: 128000,
-          };
-          let recorder = new RecordRTC.StereoAudioRecorder(stream, {
-            type: 'audio',
-            mimeType: 'audio/mp3',
-          });
-          recorder.record();
-          setTimeout(() => {
-            recorder.stop(() => {
-              let blob = recorder.blob;
-              page.audio = {
-                type: blob.type,
-                url: URL.createObjectURL(blob),
-              };
-            });
-          }, 5000); // Stop recording after 5 seconds
-        })
-        .catch((err) => {
-          console.log(err);
         });
+        page.recorder = new MediaRecorder(stream);
+        page.recorder.start();
+      };
+
+      startRecording();
 
       //appendnew_next_sd_oAZhZXgFr8EMWJeT
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_oAZhZXgFr8EMWJeT');
+      return await this.errorHandler(bh, e, 'sd_oAZhZXgFr8EMWJeT');
+    }
+  }
+
+  sd_1aH9s3a2BzqpQFyc(bh) {
+    try {
+      const page = this.page;
+      let player = document.querySelector('.audio-player');
+      console.log(player);
+      let chunks = [];
+      page.recorder.stop();
+      page.recorder.ondataavailable = (event) => {
+        console.log(event.data);
+        chunks.push(event.data);
+      };
+      page.recorder.onstop = () => {
+        const audioBlob = new Blob(chunks, { type: 'audio/wav' });
+        const audioUrl = URL.createObjectURL(audioBlob);
+        page.audio = audioUrl;
+        chunks = [];
+      };
+
+      //appendnew_next_sd_1aH9s3a2BzqpQFyc
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_1aH9s3a2BzqpQFyc');
     }
   }
 

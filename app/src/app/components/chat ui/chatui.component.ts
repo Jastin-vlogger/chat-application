@@ -149,6 +149,20 @@ export class chatuiComponent {
     }
   }
 
+  audioRecorder(...others) {
+    try {
+      var bh: any = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = {};
+      bh.local = { chunks: [] };
+
+      //appendnew_next_audioRecorder
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_KVDzBSsgq6tTPx6s');
+    }
+  }
+
   //appendnew_flow_chatuiComponent_start
 
   sd_o5tY7h4tkmXjbzY6(bh) {

@@ -151,8 +151,8 @@
                     "_key": "audioSource",
                     "_value": [
                         {
-                            "input1": "{{page.audio.url}}",
-                            "input2": "webm;codecs=opus",
+                            "input1": "{{page.audio}}",
+                            "input2": "audio/wav",
                             "toggle": {
                                 "toggleData": []
                             }
@@ -264,10 +264,16 @@
                     "_value": "page.audio",
                     "_type": "kv",
                     "_attrDef": "c"
+                },
+                {
+                    "_key": "[src]",
+                    "_value": "page.audio",
+                    "_type": "kv",
+                    "_attrDef": "c"
                 }
             ]
         },
-        "705079bd-b8f1-19e9-e11b-2e5436f3a04e": {
+        "e6d2e05a-45e9-25f5-619c-9cd49ba7177e": {
             "paletteKey": "NG-button",
             "parentEditorKey": "b92b11d5-9304-bbbc-a228-e6a33a38d008",
             "commentid": null,
@@ -305,6 +311,75 @@
                     "objValue": {
                         "nodeID": "sd_khO7p3skDabsNXJ4",
                         "functionName": "sd_khO7p3skDabsNXJ4",
+                        "activeTree": "pages",
+                        "z": "sd_ssE6YEwPi2OWIlwG",
+                        "input": []
+                    }
+                },
+                {
+                    "_key": "[disabled]",
+                    "_value": "",
+                    "_type": "kv",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "[disableRipple]",
+                    "_value": "",
+                    "_type": "kv",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "type",
+                    "_value": "",
+                    "_type": "kv",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "routerLink",
+                    "_value": "",
+                    "_type": "kv",
+                    "_attrDef": "p"
+                }
+            ]
+        },
+        "705079bd-b8f1-19e9-e11b-2e5436f3a04e": {
+            "paletteKey": "NG-button",
+            "parentEditorKey": "b92b11d5-9304-bbbc-a228-e6a33a38d008",
+            "commentid": null,
+            "designerReference": [
+                {
+                    "_key": "style",
+                    "_value": "",
+                    "_type": "kv",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "class",
+                    "_value": "",
+                    "_type": "dav",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "buttonname",
+                    "_value": "stop",
+                    "_type": "a",
+                    "_attrDef": "p",
+                    "_useAsLabel": true
+                },
+                {
+                    "_key": "color",
+                    "_value": "",
+                    "_type": "kv",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "(click)",
+                    "_value": "stopRecording()",
+                    "_type": "kv",
+                    "_attrDef": "p",
+                    "objValue": {
+                        "nodeID": "sd_9hZUfNVTPIpsZW8k",
+                        "functionName": "stopRecording",
                         "activeTree": "pages",
                         "z": "sd_ssE6YEwPi2OWIlwG",
                         "input": []

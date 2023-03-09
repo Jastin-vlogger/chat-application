@@ -8,23 +8,20 @@ import { getConnection } from 'typeorm'; //_splitter_
 export let Middlewares = {
   cors: () => {
     let corsOptions = {
-      origin: [
-        process.env.backendUrl,
-        'https://comfy-mandazi-c94129.netlify.app',
-        'https://chatwithmefrontend.onrender.com',
-      ],
+      origin: [process.env.usingIP, process.env.backendUrl],
 
       credentials: false,
       maxAge: 2592000000,
       preflightContinue: false,
+      optionsSuccessStatus: 200,
     };
     return cors(corsOptions);
   },
   sd_7EmxxOk703exD5hF: () => {
     let sess: expressSession.SessionOptions = {
-      cookie: { secure: false, httpOnly: false, sameSite: 'lax' },
+      cookie: { secure: true, httpOnly: false, sameSite: 'none' },
 
-      proxy: false,
+      proxy: true,
 
       resave: false,
 

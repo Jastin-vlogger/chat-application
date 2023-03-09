@@ -10,6 +10,7 @@ export const environment = {
         "isIDSEnabled": "true",
         "webAppMountpoint": "web",
         "NGFORAGE_MOBILE_DRIVER": "INDEXED_DB",
-        "ip": "10.10.11.149"
+        "ip": "10.10.11.149",
+        "socketUrl": "http://localhost:8081"
     }
 }

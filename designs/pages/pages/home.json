@@ -80,10 +80,10 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "console.log(page.system.oauthService , \"+++++++++\")\n\n  page.socket = page.io('http://localhost:8081');\n      page.socket.on('connection', (data) => {\n        console.log('Connected to server' + data);\n      });\n      page.socket.current = io('http://localhost:8081/');\n      page.socket.current.emit(\"add-user\", bh.system.currentUser.username);\n",
+        "script": "console.log(page.system.oauthService , \"+++++++++\")\n\n  page.socket = page.io(page.url);\n      page.socket.on('connection', (data) => {\n        console.log('Connected to server' + data);\n      });\n      page.socket.current = io(page.url);\n      page.socket.current.emit(\"add-user\", bh.system.currentUser.username);\n",
         "functionName": "sd_tkDNX2QuSc92w5ZV",
         "category": "Function",
-        "x": 225,
+        "x": 305,
         "y": 180,
         "wires": [
             [
@@ -307,7 +307,7 @@
         "y": 180,
         "wires": [
             [
-                "sd_tkDNX2QuSc92w5ZV"
+                "sd_fbtPsC0XB2GiVNJI"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -507,6 +507,37 @@
         "y": 540,
         "wires": [
             []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "homeComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_fbtPsC0XB2GiVNJI",
+        "type": "Environment",
+        "z": "sd_XBrFltqbCTmRB0Qp",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "this.page",
+                    "value": "url"
+                },
+                "envProperty": "socketUrl"
+            }
+        ],
+        "functionName": "sd_fbtPsC0XB2GiVNJI",
+        "category": "General",
+        "x": 220,
+        "y": 180,
+        "wires": [
+            [
+                "sd_tkDNX2QuSc92w5ZV"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
