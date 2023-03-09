@@ -151,7 +151,7 @@
         "cookieDomain": "",
         "cookieSecure": true,
         "cookieExpires": "",
-        "cookieHttpOnly": false,
+        "cookieHttpOnly": true,
         "cookieMaxAge": "",
         "cookiePath": "",
         "cookieSameSite": "\"none\"",
