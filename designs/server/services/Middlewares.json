@@ -77,10 +77,17 @@
             "methods": [],
             "allowedHeaders": [],
             "exposedHeaders": [],
-            "origin": []
+            "origin": [
+                {
+                    "key": "backendUrl",
+                    "rowId": "sd_DXBYXQc2iguRlqnO",
+                    "valid": true,
+                    "type": "process.env"
+                }
+            ]
         },
         "showOriginToggleButton": false,
-        "credentials": false,
+        "credentials": true,
         "maxAge": "2592000000",
         "preflightContinue": false,
         "optionsSuccessStatus": "",

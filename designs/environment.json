@@ -14,7 +14,8 @@
             "webAppMountpoint": "both",
             "CLOCK_TOLERANCE": "server",
             "NGFORAGE_MOBILE_DRIVER": "client",
-            "ip": "both"
+            "ip": "both",
+            "backendUrl": "server"
         }
     },
     "dev": {
@@ -32,7 +33,8 @@
             "webAppMountpoint": "web",
             "CLOCK_TOLERANCE": "5",
             "NGFORAGE_MOBILE_DRIVER": "INDEXED_DB",
-            "ip": "10.10.11.149"
+            "ip": "10.10.11.149",
+            "backendUrl": "https://comfy-mandazi-c94129.netlify.app"
         }
     },
     "prod": {
@@ -50,7 +52,8 @@
             "webAppMountpoint": "web",
             "CLOCK_TOLERANCE": "5",
             "NGFORAGE_MOBILE_DRIVER": "INDEXED_DB",
-            "ip": "10.10.11.149"
+            "ip": "10.10.11.149",
+            "backendUrl": "https://comfy-mandazi-c94129.netlify.app"
         }
     }
 }
