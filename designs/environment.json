@@ -34,7 +34,7 @@
             "CLOCK_TOLERANCE": "5",
             "NGFORAGE_MOBILE_DRIVER": "INDEXED_DB",
             "ip": "10.10.11.149",
-            "backendUrl": "https://comfy-mandazi-c94129.netlify.app"
+            "backendUrl": "http://localhost:4200"
         }
     },
     "prod": {
@@ -53,7 +53,7 @@
             "CLOCK_TOLERANCE": "5",
             "NGFORAGE_MOBILE_DRIVER": "INDEXED_DB",
             "ip": "10.10.11.149",
-            "backendUrl": "https://comfy-mandazi-c94129.netlify.app"
+            "backendUrl": "http://localhost:4200"
         }
     }
 }

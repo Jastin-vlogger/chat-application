@@ -83,11 +83,23 @@
                     "rowId": "sd_DXBYXQc2iguRlqnO",
                     "valid": true,
                     "type": "process.env"
+                },
+                {
+                    "key": "https://comfy-mandazi-c94129.netlify.app",
+                    "rowId": "sd_JYP3kOgkyDsljuxP",
+                    "valid": true,
+                    "type": "str"
+                },
+                {
+                    "key": "https://chatwithmefrontend.onrender.com",
+                    "rowId": "sd_jFt5Idt0v6uRnZB2",
+                    "valid": true,
+                    "type": "str"
                 }
             ]
         },
         "showOriginToggleButton": false,
-        "credentials": true,
+        "credentials": false,
         "maxAge": "2592000000",
         "preflightContinue": false,
         "optionsSuccessStatus": "",
@@ -111,13 +123,13 @@
         "nodeType": "middleware",
         "name": "Global Session",
         "cookieDomain": "",
-        "cookieSecure": true,
+        "cookieSecure": false,
         "cookieExpires": "",
-        "cookieHttpOnly": true,
+        "cookieHttpOnly": false,
         "cookieMaxAge": "",
         "cookiePath": "",
-        "cookieSameSite": "\"none\"",
-        "proxy": true,
+        "cookieSameSite": "\"lax\"",
+        "proxy": false,
         "resave": false,
         "rolling": false,
         "saveUninitialized": false,
