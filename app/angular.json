@@ -26,7 +26,13 @@
                             "src/constants",
                             "src/cordova.js",
                             "src/locales",
-                            "src/router-patch.js"
+                            "src/router-patch.js",
+                            {
+                                "glob": "_redirects",
+                                "input": "src",
+                                "output": "/"
+                              }
+                              
                         ],
                         "styles": [
                             "src/styles.scss"
