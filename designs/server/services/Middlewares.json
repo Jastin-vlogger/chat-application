@@ -8,8 +8,7 @@
         "info": "",
         "generateNext": true,
         "serviceName": "Middlewares",
-        "relativeParentPath": "",
-        "viewType": "server"
+        "relativeParentPath": ""
     },
     {
         "id": "ssd_global_middleware_start_id",
@@ -106,19 +105,19 @@
             "exposedHeaders": [],
             "origin": [
                 {
-                    "key": "http://127.0.0.1:4200",
+                    "key": "http://127.0.0.1:4200/",
                     "rowId": "sd_oGJeB5WNYn8osEUh",
                     "valid": true,
                     "type": "str"
                 },
                 {
-                    "key": "http://localhost:4200",
+                    "key": "http://localhost:4200/",
                     "rowId": "sd_I05XFHR2Zr9urL5L",
                     "valid": true,
                     "type": "str"
                 },
                 {
-                    "key": "https://chatwithme-1c2d.onrender.com",
+                    "key": "https://chatwithme-1c2d.onrender.com/",
                     "rowId": "sd_BNvJ14WyaIALa2H2",
                     "valid": true,
                     "type": "str"
