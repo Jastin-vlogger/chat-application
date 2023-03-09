@@ -1316,12 +1316,12 @@ let homeComponent = class homeComponent {
     sd_tkDNX2QuSc92w5ZV(bh) {
         try {
             const page = this.page;
-            console.log(page.system.oauthService.userInfo, '+++++++++');
-            page.socket = page.io('https://chatwithme-1c2d.onrender.com');
+            console.log(page.system.oauthService, '+++++++++');
+            page.socket = page.io('http://localhost:8081');
             page.socket.on('connection', (data) => {
                 console.log('Connected to server' + data);
             });
-            page.socket.current = (0,socket_io_client__WEBPACK_IMPORTED_MODULE_4__.io)('https://chatwithme-1c2d.onrender.com');
+            page.socket.current = (0,socket_io_client__WEBPACK_IMPORTED_MODULE_4__.io)('http://localhost:8081/');
             page.socket.current.emit('add-user', bh.system.currentUser.username);
             bh = this.sd_qidpAg8ko6W9l4gm(bh);
             bh = this.fetchUser(bh);
@@ -3623,14 +3623,15 @@ const environment = {
     "name": "dev",
     "properties": {
         "production": false,
-        "ssdURL": "https://chatwithme-1c2d.onrender.com/api/",
+        "ssdURL": "http://localhost:8081/api/",
         "tenantName": "neutrinos",
         "appName": "sample",
         "namespace": "com.neutrinos.sample",
         "useDefaultExceptionUI": true,
         "isIDSEnabled": "true",
         "webAppMountpoint": "web",
-        "NGFORAGE_MOBILE_DRIVER": "INDEXED_DB"
+        "NGFORAGE_MOBILE_DRIVER": "INDEXED_DB",
+        "ip": "10.10.11.149"
     }
 };
 
