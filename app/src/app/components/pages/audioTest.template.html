@@ -1,3 +1,5 @@
-<div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><audio controls [autoplay]="true" [loop]="true" id="audio-player" *ngIf="page.audio" [src]="page.audio">
+<div id="waveform">
+</div>
+<div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><audio controls [autoplay]="false" [loop]="false" id="audio-player" *ngIf="page.audio" [src]="page.audio">
     <source src="{{page.audio}}" type="audio/audio/wav">
-  </audio><button mat-button (click)="sd_khO7p3skDabsNXJ4()">start recording</button><button mat-button (click)="stopRecording()">stop</button></div>
+  </audio><mat-icon (click)="sd_khO7p3skDabsNXJ4()">settings_voice</mat-icon><mat-icon (click)="stopRecording()">send</mat-icon></div>

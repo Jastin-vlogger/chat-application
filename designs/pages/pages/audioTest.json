@@ -43,7 +43,7 @@
         "y": 80,
         "wires": [
             [
-                "sd_o3YoXae8yR8O7A8J"
+                "sd_EDg7rxum0Lwa7SK3"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -63,7 +63,7 @@
         "globalVariables": [],
         "functionName": "sd_NR7gqqi3gbjohLwm",
         "category": "Function",
-        "x": 325,
+        "x": 485,
         "y": 80,
         "wires": [
             []
@@ -157,7 +157,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "let player = document.querySelector('.audio-player')\nconsole.log(player)\nlet chunks = []\npage.recorder.stop();\npage.recorder.ondataavailable = (event) => {\n  console.log(event.data)\n  chunks.push(event.data);\n};\npage.recorder.onstop = () => {\n  const audioBlob = new Blob(chunks, { type: 'audio/wav' });\n  const audioUrl = URL.createObjectURL(audioBlob);\n  page.audio = page.sanitizer.bypassSecurityTrustUrl(audioUrl)\n  chunks = [];\n};",
+        "script": "let player = document.querySelector('.audio-player')\nconsole.log(player)\nlet chunks = []\npage.recorder.stop();\npage.recorder.ondataavailable = (event) => {\n  console.log(event.data)\n  chunks.push(event.data);\n};\npage.recorder.onstop = () => {\n  const audioBlob = new Blob(chunks, { type: 'audio/wav' });\n  const audioUrl = URL.createObjectURL(audioBlob);\n  console.log(page.sanitizer)\n  page.audio = page.sanitizer.bypassSecurityTrustUrl(audioUrl)\n  chunks = [];\n  console.log(page.audio)\n  page.wavesurfer.load(' https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3');\n};",
         "functionName": "sd_1aH9s3a2BzqpQFyc",
         "category": "Function",
         "x": 410,
@@ -198,11 +198,64 @@
         "serviceDesignerType": "pages",
         "functionName": "sd_o3YoXae8yR8O7A8J",
         "category": "Function",
-        "x": 180,
+        "x": 365,
         "y": 80,
         "wires": [
             [
                 "sd_NR7gqqi3gbjohLwm"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "audioTestComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_Fs82pct0Waa0M6Fi",
+        "type": "Script",
+        "z": "sd_ssE6YEwPi2OWIlwG",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "wavsufer inital",
+        "script": "page.wavesurfer = WaveSurfer.create({\n    container: '#waveform',\n    waveColor: 'violet',\n    progressColor: 'purple'\n});",
+        "functionName": "wavsuferInital",
+        "category": "Function",
+        "x": 240,
+        "y": 80,
+        "wires": [
+            [
+                "sd_o3YoXae8yR8O7A8J"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "audioTestComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_EDg7rxum0Lwa7SK3",
+        "type": "UseDependency",
+        "z": "sd_ssE6YEwPi2OWIlwG",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "property": "WaveSurfer",
+        "propertyType": "this.page",
+        "propertyGv": "this.page.WaveSurfer",
+        "alias": "WaveSurfer",
+        "modules": [],
+        "import_all": true,
+        "library": "wavesurfer.js",
+        "serviceDesignerType": "pages",
+        "functionName": "sd_EDg7rxum0Lwa7SK3",
+        "category": "Function",
+        "x": 140,
+        "y": 80,
+        "wires": [
+            [
+                "sd_Fs82pct0Waa0M6Fi"
             ]
         ],
         "__n_excludedFromValidation__": {},

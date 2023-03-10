@@ -12,6 +12,7 @@ import {
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.service'; //_splitter_
+import * as WaveSurfer from 'wavesurfer.js'; //_splitter_
 import { DomSanitizer } from '@angular/platform-browser'; //_splitter_
 //append_imports_end
 
@@ -56,7 +57,7 @@ export class audioTestComponent {
 
   sd_c8KsLHt410oTzFis(bh) {
     try {
-      bh = this.sd_o3YoXae8yR8O7A8J(bh);
+      bh = this.sd_EDg7rxum0Lwa7SK3(bh);
       //appendnew_next_sd_c8KsLHt410oTzFis
       return bh;
     } catch (e) {
@@ -95,6 +96,35 @@ export class audioTestComponent {
   }
 
   //appendnew_flow_audioTestComponent_start
+
+  sd_EDg7rxum0Lwa7SK3(bh) {
+    try {
+      this.page.WaveSurfer = WaveSurfer;
+
+      bh = this.wavsuferInital(bh);
+      //appendnew_next_sd_EDg7rxum0Lwa7SK3
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_EDg7rxum0Lwa7SK3');
+    }
+  }
+
+  wavsuferInital(bh) {
+    try {
+      const page = this.page;
+      page.wavesurfer = WaveSurfer.create({
+        container: '#waveform',
+        waveColor: 'violet',
+        progressColor: 'purple',
+      });
+
+      bh = this.sd_o3YoXae8yR8O7A8J(bh);
+      //appendnew_next_wavsuferInital
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_Fs82pct0Waa0M6Fi');
+    }
+  }
 
   sd_o3YoXae8yR8O7A8J(bh) {
     try {
@@ -152,8 +182,13 @@ export class audioTestComponent {
       page.recorder.onstop = () => {
         const audioBlob = new Blob(chunks, { type: 'audio/wav' });
         const audioUrl = URL.createObjectURL(audioBlob);
+        console.log(page.sanitizer);
         page.audio = page.sanitizer.bypassSecurityTrustUrl(audioUrl);
         chunks = [];
+        console.log(page.audio);
+        page.wavesurfer.load(
+          ' https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3'
+        );
       };
 
       //appendnew_next_sd_1aH9s3a2BzqpQFyc

@@ -64,7 +64,22 @@
                 }
             }
         ],
-        "pageVariables": [],
+        "pageVariables": [
+            {
+                "key": "isTyping",
+                "defaultValue": {
+                    "type": "bool",
+                    "value": "false"
+                }
+            },
+            {
+                "key": "isRecording",
+                "defaultValue": {
+                    "type": "bool",
+                    "value": "true"
+                }
+            }
+        ],
         "functionName": "sd_kirisANk1V71r8yE",
         "category": "Lifecycle Events",
         "x": 105,
@@ -77,29 +92,6 @@
         "__n_excludedFromValidation__": {},
         "generateNext": true,
         "serviceName": "chatuiComponent"
-    },
-    {
-        "id": "sd_zFIU0JjrWqU66dUJ",
-        "type": "PageVariables",
-        "z": "sd_Cr7G5phrw9t1BQMQ",
-        "viewType": "pages",
-        "nodeType": "flow",
-        "name": "",
-        "inputs": 1,
-        "outputs": 1,
-        "operation": "set",
-        "globalVariables": [],
-        "functionName": "sd_zFIU0JjrWqU66dUJ",
-        "category": "Function",
-        "x": 365,
-        "y": 120,
-        "wires": [
-            []
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "chatuiComponent",
-        "generated": true
     },
     {
         "id": "sd_0B8a4lbozurNPPOB",
@@ -171,7 +163,7 @@
         "y": 580,
         "wires": [
             [
-                "sd_9RgcjZECdctzEa77"
+                "sd_zKE9esnUbRJqPdqd"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -185,11 +177,11 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "socket emiting script",
-        "script": "console.log(page.msg)\n\nif (!page.msg) {\n  return;\n} else {\n  page.email = this.email;\n  page.currentUser = this.currentUser;\n\n  page.socket.current.emit(\"send-msg\", {\n    to: this.email,\n    from: this.currentUser,\n    message: page.msg,\n  });\n\n\n\n  bh.message = {\n    \"message\": { \"text\": page.msg },\n    \"sender\": this.currentUser,\n    \"users\": [this.currentUser, this.email],\n  }\n\n  this.messages.push(bh.message)\n\n}\n\n\n\n",
+        "script": "console.log(page.msg)\n\nif (!page.msg) {\n  console.log(\"im herereerererererererererererererer\")\n  return;\n} else {\n  page.email = this.email;\n  page.currentUser = this.currentUser;\n\n  page.socket.current.emit(\"send-msg\", {\n    to: this.email,\n    from: this.currentUser,\n    message: page.msg,\n  });\n\n\n\n  bh.message = {\n    \"message\": { \"text\": page.msg },\n    \"sender\": this.currentUser,\n    \"users\": [this.currentUser, this.email],\n  }\n\n  this.messages.push(bh.message)\n\n}\n\n\n\n",
         "functionName": "socketEmitingScript",
         "category": "Function",
-        "x": 230,
-        "y": 580,
+        "x": 465,
+        "y": 720,
         "wires": [
             [
                 "sd_PrqzeWg7SE5dPhb8"
@@ -309,8 +301,8 @@
         "accept_csd": true,
         "functionName": "saveMessageToBackend",
         "category": "General",
-        "x": 365,
-        "y": 580,
+        "x": 600,
+        "y": 720,
         "wires": [
             [
                 "sd_n9FllMMYVgDOKyeR"
@@ -335,7 +327,7 @@
         "y": 120,
         "wires": [
             [
-                "sd_zFIU0JjrWqU66dUJ"
+                "sd_CmQ6lgOSxzwlSsXX"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -507,11 +499,11 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "page.msg = ''",
+        "script": "page.msg = '';\npage.isTyping = false;\npage.isRecording = true;",
         "functionName": "sd_n9FllMMYVgDOKyeR",
         "category": "Function",
-        "x": 480,
-        "y": 580,
+        "x": 715,
+        "y": 720,
         "wires": [
             []
         ],
@@ -521,34 +513,246 @@
         "generated": true
     },
     {
-        "id": "sd_KVDzBSsgq6tTPx6s",
+        "id": "sd_3d5ZuDpqBUuYXpLg",
         "type": "PageStart",
         "z": "sd_Cr7G5phrw9t1BQMQ",
         "viewType": "pages",
         "nodeType": "start",
-        "name": "audio recorder",
+        "name": "start recording",
         "outputs": 1,
-        "inputVariables": [],
-        "localVariables": [
+        "inputVariables": [
             {
-                "key": "chunks",
+                "key": "audioBlob",
                 "defaultValue": {
                     "type": "any",
-                    "value": "[]"
+                    "value": ""
                 },
                 "output": false
             }
         ],
+        "localVariables": [],
         "flow_type": "sync",
-        "functionName": "audioRecorder",
+        "functionName": "startRecording",
         "category": "General",
-        "x": 105,
-        "y": 800,
+        "x": 85,
+        "y": 820,
         "wires": [
-            []
+            [
+                "sd_k3Cu7gIf1cTrXnLh"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
         "serviceName": "chatuiComponent"
+    },
+    {
+        "id": "sd_k3Cu7gIf1cTrXnLh",
+        "type": "Script",
+        "z": "sd_Cr7G5phrw9t1BQMQ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\n\nconst startRecording = async () => {\n  const stream = await navigator.mediaDevices.getUserMedia({ audio: true });\n  page.recorder = new MediaRecorder(stream);\n  page.recorder.start();\n  page.isTyping = true;\n  page.isRecording = false;\n};\n\nstartRecording();",
+        "functionName": "sd_k3Cu7gIf1cTrXnLh",
+        "category": "Function",
+        "x": 190,
+        "y": 820,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "chatuiComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_bPHMWbnlRdguHDNA",
+        "type": "Script",
+        "z": "sd_Cr7G5phrw9t1BQMQ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "let player = document.querySelector('.audio-player')\nconsole.log(player)\nlet chunks = []\npage.recorder.stop();\npage.recorder.ondataavailable = (event) => {\n  console.log(event.data)\n  chunks.push(event.data);\n};\npage.recorder.onstop = () => {\n  const audioBlob = new Blob(chunks, { type: 'audio/wav' });\n  console.log('Blob created');\n  const audioUrl = URL.createObjectURL(audioBlob);\n  console.log('URL created');\n\n  console.log(page.sanitize)\n  page.audio = page.sanitize.bypassSecurityTrustUrl(audioUrl)\n  chunks = [];\n  console.log(page.audio)\n  bh.message = {\n    \"message\": { \"audio\": page.audio },\n    \"sender\": this.currentUser,\n    \"users\": [this.currentUser, this.email],\n  }\n  let temp = this.messages\n  this.messages = null\n  this.messages = [...temp, bh.message]\n // this.messages.push(bh.message);\n  console.log(this.messages)\n};\n\npage.isTyping = false;\npage.isRecording = true;\n\n",
+        "functionName": "sd_bPHMWbnlRdguHDNA",
+        "category": "Function",
+        "x": 465,
+        "y": 480,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "chatuiComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_qr7qrYN89cwZ31NZ",
+        "type": "PageVariables",
+        "z": "sd_Cr7G5phrw9t1BQMQ",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_qr7qrYN89cwZ31NZ",
+        "category": "Function",
+        "x": 685,
+        "y": 120,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "chatuiComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_CmQ6lgOSxzwlSsXX",
+        "type": "UseDependency",
+        "z": "sd_Cr7G5phrw9t1BQMQ",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "property": "",
+        "propertyType": "bh",
+        "propertyGv": "bh.",
+        "alias": "",
+        "modules": [
+            {
+                "textIp": "DomSanitizer",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "sanitize"
+                },
+                "injectable": true
+            }
+        ],
+        "import_all": false,
+        "library": "@angular/platform-browser",
+        "serviceDesignerType": "pages",
+        "functionName": "sd_CmQ6lgOSxzwlSsXX",
+        "category": "Function",
+        "x": 565,
+        "y": 120,
+        "wires": [
+            [
+                "sd_qr7qrYN89cwZ31NZ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "chatuiComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_W8wUIJWLiNvCwnHm",
+        "type": "PageStart",
+        "z": "sd_Cr7G5phrw9t1BQMQ",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "get typing ",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "getTyping",
+        "category": "General",
+        "x": 100,
+        "y": 940,
+        "wires": [
+            [
+                "sd_G8WWeXV2ndP6DjcW"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "chatuiComponent"
+    },
+    {
+        "id": "sd_G8WWeXV2ndP6DjcW",
+        "type": "Script",
+        "z": "sd_Cr7G5phrw9t1BQMQ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "if (page.msg == '') {\n    page.isTyping = false;\n    page.isRecording = true;\n} else {\n    page.isTyping = true;\n    page.isRecording = false;\n}",
+        "functionName": "sd_G8WWeXV2ndP6DjcW",
+        "category": "Function",
+        "x": 200,
+        "y": 940,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "chatuiComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_XEnkHakQxJh2FgAW",
+        "type": "PageSwitch",
+        "z": "sd_Cr7G5phrw9t1BQMQ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "msg",
+        "propertyType": "this.page",
+        "propertyGv": "this.page.msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "undefined",
+                "vt": "literal",
+                "gv": "undefined"
+            },
+            {
+                "t": "nempty"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_XEnkHakQxJh2FgAW",
+        "category": "Function",
+        "x": 325,
+        "y": 580,
+        "wires": [
+            [
+                "sd_bPHMWbnlRdguHDNA"
+            ],
+            [
+                "sd_9RgcjZECdctzEa77"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "chatuiComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_zKE9esnUbRJqPdqd",
+        "type": "Script",
+        "z": "sd_Cr7G5phrw9t1BQMQ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(page.msg)",
+        "functionName": "sd_zKE9esnUbRJqPdqd",
+        "category": "Function",
+        "x": 205,
+        "y": 580,
+        "wires": [
+            [
+                "sd_XEnkHakQxJh2FgAW"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "chatuiComponent",
+        "generated": true
     }
 ]

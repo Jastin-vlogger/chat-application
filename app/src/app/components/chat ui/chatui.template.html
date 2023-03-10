@@ -4,7 +4,7 @@
       {{email}}
     </div>
   </div><bh-messages style="flex:2; overflow:auto;" [messages]="this.messages" [currentUser]="this.currentUser"></bh-messages>
-  <div fxLayout="row wrap" style="background-color:whitesmoke;padding:10px;" fxLayoutGap="1em" fxLayoutAlign="start center" [fxShow]="true"><input [(ngModel)]="page.msg" (keyup.enter)="messsage()" style="    width: calc( 100% - 25px - 4em );border: none;     height: 30px;border-radius: 20px;outline: none;font-size: large;" class="padding-1">
-    <mat-icon style="cursor:pointer;" (click)="messsage()" *ngIf="page.msg ">send</mat-icon><mat-icon *ngIf="!page.msg">settings_voice</mat-icon>
+  <div fxLayout="row wrap" style="background-color:whitesmoke;padding:10px;" fxLayoutGap="1em" fxLayoutAlign="start center" [fxShow]="true"><input [(ngModel)]="page.msg" (keyup.enter)="messsage()" (input)="getTyping()" style="width: calc( 100% - 25px - 4em );border: none;     height: 15px;border-radius: 20px;outline: none;font-size: large;" class="padding-1">
+    <mat-icon style="cursor:pointer;" (click)="messsage()" *ngIf="page.isTyping">send</mat-icon><mat-icon class="cursor" *ngIf="page.isRecording" (click)="startRecording()">settings_voice</mat-icon>
   </div>
 </div>

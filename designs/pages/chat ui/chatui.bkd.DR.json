@@ -568,7 +568,7 @@
                 "designerReference": [
                     {
                         "_key": "style",
-                        "_value": "    width: calc( 100% - 25px - 4em );border: none;     height: 30px;border-radius: 20px;outline: none;font-size: large;",
+                        "_value": "width: calc( 100% - 25px - 4em );border: none;     height: 15px;border-radius: 20px;outline: none;font-size: large;",
                         "_type": "kv",
                         "_attrDef": "p"
                     },
@@ -768,6 +768,20 @@
                             "z": "sd_Cr7G5phrw9t1BQMQ",
                             "input": []
                         }
+                    },
+                    {
+                        "_key": "(input)",
+                        "_value": "getTyping()",
+                        "_type": "kv",
+                        "_attrDef": "c",
+                        "_customAttributeFlag": "flowpicker",
+                        "objValue": {
+                            "nodeID": "sd_W8wUIJWLiNvCwnHm",
+                            "functionName": "getTyping",
+                            "activeTree": "pages",
+                            "z": "sd_Cr7G5phrw9t1BQMQ",
+                            "input": []
+                        }
                     }
                 ]
             },
@@ -822,7 +836,7 @@
                     },
                     {
                         "_key": "*ngIf",
-                        "_value": "page.msg ",
+                        "_value": "page.isTyping",
                         "_type": "kv",
                         "_attrDef": "c"
                     }
@@ -841,7 +855,9 @@
                     },
                     {
                         "_key": "class",
-                        "_value": "",
+                        "_value": [
+                            "cursor"
+                        ],
                         "_type": "dav",
                         "_attrDef": "p"
                     },
@@ -866,9 +882,22 @@
                     },
                     {
                         "_key": "*ngIf",
-                        "_value": "!page.msg",
+                        "_value": "page.isRecording",
                         "_type": "kv",
                         "_attrDef": "c"
+                    },
+                    {
+                        "_key": "(click)",
+                        "_value": "startRecording()",
+                        "_type": "kv",
+                        "_attrDef": "c",
+                        "objValue": {
+                            "nodeID": "sd_3d5ZuDpqBUuYXpLg",
+                            "functionName": "startRecording",
+                            "activeTree": "pages",
+                            "z": "sd_Cr7G5phrw9t1BQMQ",
+                            "input": []
+                        }
                     }
                 ]
             }

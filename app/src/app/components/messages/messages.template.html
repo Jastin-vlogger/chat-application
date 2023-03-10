@@ -3,8 +3,10 @@
     <div (click)="func($event)" [ngClass]="{ &apos;sent&apos; : message.sender == currentUser , &apos;received&apos; : message.sender.email != this.currentUser }" class="chat-box">
       <div>
         {{message.message.text}}
-      </div>
-      <div class="time">
+      </div><audio controls *ngIf="message.message.audio" [src]="message.message.audio">
+
+      </audio>
+      <div *ngIf="!message.message.audio" class="time">
         10:00am </div>
     </div>
   </div>
