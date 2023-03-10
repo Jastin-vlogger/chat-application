@@ -10,7 +10,7 @@ export let Middlewares = {
     let corsOptions = {
       origin: [process.env.usingIP, process.env.backendUrl],
 
-      credentials: false,
+      credentials: true,
       maxAge: 2592000000,
       preflightContinue: false,
       optionsSuccessStatus: 200,
@@ -19,9 +19,9 @@ export let Middlewares = {
   },
   sd_7EmxxOk703exD5hF: () => {
     let sess: expressSession.SessionOptions = {
-      cookie: { secure: true, httpOnly: false, sameSite: 'none' },
+      cookie: { secure: false, httpOnly: false, sameSite: 'lax' },
 
-      proxy: true,
+      proxy: false,
 
       resave: false,
 

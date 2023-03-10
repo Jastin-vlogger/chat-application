@@ -346,7 +346,7 @@
                 "designerReference": [
                     {
                         "_key": "style",
-                        "_value": "",
+                        "_value": "cursor:pointer;",
                         "_type": "kv",
                         "_attrDef": "p"
                     },

@@ -12,6 +12,7 @@ import {
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.service'; //_splitter_
+import { DomSanitizer } from '@angular/platform-browser'; //_splitter_
 //append_imports_end
 
 @Component({
@@ -55,7 +56,7 @@ export class audioTestComponent {
 
   sd_c8KsLHt410oTzFis(bh) {
     try {
-      bh = this.sd_NR7gqqi3gbjohLwm(bh);
+      bh = this.sd_o3YoXae8yR8O7A8J(bh);
       //appendnew_next_sd_c8KsLHt410oTzFis
       return bh;
     } catch (e) {
@@ -94,6 +95,18 @@ export class audioTestComponent {
   }
 
   //appendnew_flow_audioTestComponent_start
+
+  sd_o3YoXae8yR8O7A8J(bh) {
+    try {
+      this.page.sanitizer = this.__page_injector__.get(DomSanitizer);
+
+      bh = this.sd_NR7gqqi3gbjohLwm(bh);
+      //appendnew_next_sd_o3YoXae8yR8O7A8J
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_o3YoXae8yR8O7A8J');
+    }
+  }
 
   sd_NR7gqqi3gbjohLwm(bh) {
     try {
@@ -139,7 +152,7 @@ export class audioTestComponent {
       page.recorder.onstop = () => {
         const audioBlob = new Blob(chunks, { type: 'audio/wav' });
         const audioUrl = URL.createObjectURL(audioBlob);
-        page.audio = audioUrl;
+        page.audio = page.sanitizer.bypassSecurityTrustUrl(audioUrl);
         chunks = [];
       };
 

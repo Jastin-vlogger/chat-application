@@ -43,7 +43,7 @@
         "y": 80,
         "wires": [
             [
-                "sd_NR7gqqi3gbjohLwm"
+                "sd_o3YoXae8yR8O7A8J"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -157,13 +157,53 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "let player = document.querySelector('.audio-player')\nconsole.log(player)\nlet chunks = []\npage.recorder.stop();\npage.recorder.ondataavailable = (event) => {\n  console.log(event.data)\n  chunks.push(event.data);\n};\npage.recorder.onstop = () => {\n  const audioBlob = new Blob(chunks, { type: 'audio/wav' });\n  const audioUrl = URL.createObjectURL(audioBlob);\n  page.audio = audioUrl\n  chunks = [];\n};",
+        "script": "let player = document.querySelector('.audio-player')\nconsole.log(player)\nlet chunks = []\npage.recorder.stop();\npage.recorder.ondataavailable = (event) => {\n  console.log(event.data)\n  chunks.push(event.data);\n};\npage.recorder.onstop = () => {\n  const audioBlob = new Blob(chunks, { type: 'audio/wav' });\n  const audioUrl = URL.createObjectURL(audioBlob);\n  page.audio = page.sanitizer.bypassSecurityTrustUrl(audioUrl)\n  chunks = [];\n};",
         "functionName": "sd_1aH9s3a2BzqpQFyc",
         "category": "Function",
         "x": 410,
         "y": 220,
         "wires": [
             []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "audioTestComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_o3YoXae8yR8O7A8J",
+        "type": "UseDependency",
+        "z": "sd_ssE6YEwPi2OWIlwG",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "property": "",
+        "propertyType": "bh",
+        "propertyGv": "bh.",
+        "alias": "",
+        "modules": [
+            {
+                "textIp": "DomSanitizer",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "sanitizer"
+                },
+                "injectable": true
+            }
+        ],
+        "import_all": false,
+        "library": "@angular/platform-browser",
+        "serviceDesignerType": "pages",
+        "functionName": "sd_o3YoXae8yR8O7A8J",
+        "category": "Function",
+        "x": 180,
+        "y": 80,
+        "wires": [
+            [
+                "sd_NR7gqqi3gbjohLwm"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
