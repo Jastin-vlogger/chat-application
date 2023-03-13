@@ -64,6 +64,15 @@ console.log('process.env.pm_id', process.env.pm_id);
         // load global pre middlewares here
         app.set('base', contextPath);
         app.set('trust proxy', 1)
+
+        app.use(function(req, res, next) {
+            res.header("Access-Control-Allow-Credentials", 'true');
+            res.header("Access-Control-Allow-Origin", "https://chatwithme-1c2donrender.netlify.app");
+            res.header("Access-Control-Allow-Headers",
+            "Origin, X-Requested-With, Content-Type, Accept, Authorization, X-HTTP-Method-Override, Set-Cookie, Cookie");
+            res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+            next();  
+         });   
         /****************************
          * Load server start scripts
          ****************************/
