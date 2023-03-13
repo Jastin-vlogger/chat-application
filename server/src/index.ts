@@ -67,7 +67,7 @@ console.log('process.env.pm_id', process.env.pm_id);
 
         app.use(function(req, res, next) {
             res.header("Access-Control-Allow-Credentials", 'true');
-            res.header("Access-Control-Allow-Origin", "https://chatwithme-1c2donrender.netlify.app");
+            res.header("Access-Control-Allow-Origin", "https://superb-haupia-561901.netlify.app");
             res.header("Access-Control-Allow-Headers",
             "Origin, X-Requested-With, Content-Type, Accept, Authorization, X-HTTP-Method-Override, Set-Cookie, Cookie");
             res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
@@ -96,10 +96,10 @@ console.log('process.env.pm_id', process.env.pm_id);
         // load global pre routes
         loadMiddlewares('post', generatedMiddlewares, app);
         baseApp.use(apiDocsPath, swaggerUi.serve, swaggerUi.setup(schemaBuilder.swaggerDocument));
-        app.get('*', express.static(path.join(__dirname, 'dist')), (req, res) => {
+        app.get('*', express.static(path.join(__dirname, 'angular-app')), (req, res) => {
             const ssdAppPath = process.env.webAppMountpoint || 'web';
             if (ssdAppPath === '/') {
-                res.sendFile(path.join(__dirname, 'dist/index.html'));
+                res.sendFile(path.join(__dirname, 'angular-app/index.html'));
             } else {
                 const originalUrl = req.originalUrl;
                 const firstPath = new url.URL(
@@ -110,7 +110,7 @@ console.log('process.env.pm_id', process.env.pm_id);
                     .split('/')
                     .filter((v) => v)[0];
                 if (firstPath === ssdAppPath) {
-                    res.sendFile(path.join(__dirname, 'dist/index.html'));
+                    res.sendFile(path.join(__dirname, 'angular-app/index.html'));
                 } else {
                     res.status(404).send('Invalid API endpoint');
                 }
@@ -128,7 +128,7 @@ console.log('process.env.pm_id', process.env.pm_id);
         const server = baseApp.listen(port);
         const io = new Server(server, {
             cors: {
-                origin: "https://phenomenal-horse-39317f.netlify.app",
+                origin: "https://superb-haupia-561901.netlify.app",
                 methods: "*",
                 credentials: true,
             },
