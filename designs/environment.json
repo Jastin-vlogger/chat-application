@@ -38,7 +38,7 @@
             "ip": "10.10.11.149",
             "backendUrl": "http://localhost:4200",
             "usingIP": "https://endearing-jelly-7e73ad.netlify.app",
-            "socketUrl": "http://localhost:8081"
+            "socketUrl": "https://chatwithme-1c2d.onrender.com/"
         }
     },
     "prod": {
@@ -59,7 +59,7 @@
             "ip": "10.10.11.149",
             "backendUrl": "http://localhost:4200",
             "usingIP": "https://endearing-jelly-7e73ad.netlify.app",
-            "socketUrl": "http://localhost:8081"
+            "socketUrl": "https://chatwithme-1c2d.onrender.com/"
         }
     }
 }
