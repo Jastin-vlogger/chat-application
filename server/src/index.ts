@@ -118,7 +118,7 @@ console.log('process.env.pm_id', process.env.pm_id);
         const server = baseApp.listen(port);
         const io = new Server(server, {
             cors: {
-                origin: "http://localhost:4200",
+                origin: "https://phenomenal-horse-39317f.netlify.app",
                 methods: "*",
                 credentials: true,
             },
