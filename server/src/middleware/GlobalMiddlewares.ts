@@ -27,7 +27,7 @@ export let Middlewares = {
 
       proxy: true,
 
-      resave: true,
+      resave: false,
 
       rolling: false,
 
@@ -35,7 +35,7 @@ export let Middlewares = {
 
       secret: 'qPXoLFLDtk',
 
-      unset: 'destroy',
+      unset: 'keep',
     };
     return expressSession(sess);
   },
