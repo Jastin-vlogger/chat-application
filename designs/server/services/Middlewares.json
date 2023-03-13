@@ -8,8 +8,7 @@
         "info": "",
         "generateNext": true,
         "serviceName": "Middlewares",
-        "relativeParentPath": "",
-        "viewType": "server"
+        "relativeParentPath": ""
     },
     {
         "id": "ssd_global_middleware_start_id",
@@ -92,7 +91,7 @@
                     "type": "process.env"
                 },
                 {
-                    "key": "https://phenomenal-horse-39317f.netlify.app",
+                    "key": "https://superb-haupia-561901.netlify.app",
                     "rowId": "sd_WEKN34WdCHS3veZq",
                     "valid": true,
                     "type": "str"

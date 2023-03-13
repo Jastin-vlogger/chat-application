@@ -11,7 +11,7 @@ export let Middlewares = {
       origin: [
         process.env.usingIP,
         process.env.backendUrl,
-        'https://phenomenal-horse-39317f.netlify.app',
+        'https://superb-haupia-561901.netlify.app',
       ],
 
       credentials: true,
