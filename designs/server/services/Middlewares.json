@@ -8,8 +8,7 @@
         "info": "",
         "generateNext": true,
         "serviceName": "Middlewares",
-        "relativeParentPath": "",
-        "viewType": "server"
+        "relativeParentPath": ""
     },
     {
         "id": "ssd_global_middleware_start_id",

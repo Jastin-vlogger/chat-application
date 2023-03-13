@@ -86,10 +86,10 @@ console.log('process.env.pm_id', process.env.pm_id);
         // load global pre routes
         loadMiddlewares('post', generatedMiddlewares, app);
         baseApp.use(apiDocsPath, swaggerUi.serve, swaggerUi.setup(schemaBuilder.swaggerDocument));
-        app.get('*', express.static(path.join(__dirname, 'angular-app')), (req, res) => {
+        app.get('*', express.static(path.join(__dirname, 'dist')), (req, res) => {
             const ssdAppPath = process.env.webAppMountpoint || 'web';
             if (ssdAppPath === '/') {
-                res.sendFile(path.join(__dirname, 'angular-app/index.html'));
+                res.sendFile(path.join(__dirname, 'dist/index.html'));
             } else {
                 const originalUrl = req.originalUrl;
                 const firstPath = new url.URL(
@@ -100,7 +100,7 @@ console.log('process.env.pm_id', process.env.pm_id);
                     .split('/')
                     .filter((v) => v)[0];
                 if (firstPath === ssdAppPath) {
-                    res.sendFile(path.join(__dirname, 'angular-app/index.html'));
+                    res.sendFile(path.join(__dirname, 'dist/index.html'));
                 } else {
                     res.status(404).send('Invalid API endpoint');
                 }
