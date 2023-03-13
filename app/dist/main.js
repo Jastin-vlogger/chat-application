@@ -335,12 +335,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "chatuiComponent": () => (/* binding */ chatuiComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! tslib */ 34929);
 /* harmony import */ var _chatui_template_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./chatui.template.html?ngResource */ 77619);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 3184);
 /* harmony import */ var app_n_services_SDBaseService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! app/n-services/SDBaseService */ 25961);
 /* harmony import */ var app_n_services_sd_page_common_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! app/n-services/sd-page-common.service */ 25583);
 /* harmony import */ var app_n_services_service_caller_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! app/n-services/service-caller.service */ 44346);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/platform-browser */ 50318);
 /* harmony import */ var app_sd_services_login__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! app/sd-services/login */ 7815);
 /* harmony import */ var app_sd_services_user__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! app/sd-services/user */ 31461);
 /*DEFAULT GENERATED TEMPLATE. DO NOT CHANGE CLASS NAME*/
@@ -348,6 +349,7 @@ __webpack_require__.r(__webpack_exports__);
 //append_imports_start
 
 
+ //_splitter_
  //_splitter_
  //_splitter_
  //_splitter_
@@ -383,6 +385,7 @@ let chatuiComponent = class chatuiComponent {
         let bh = this.__page_injector__
             .get(app_n_services_sd_page_common_service__WEBPACK_IMPORTED_MODULE_2__.SDPageCommonService)
             .constructFlowObject(this);
+        Object.assign(this.page, { isTyping: false, isRecording: true });
         //append_listeners
     }
     sd_kirisANk1V71r8yE(bh) {
@@ -416,7 +419,7 @@ let chatuiComponent = class chatuiComponent {
                 .constructFlowObject(this);
             bh.input = {};
             bh.local = {};
-            bh = this.socketEmitingScript(bh);
+            bh = this.sd_zKE9esnUbRJqPdqd(bh);
             //appendnew_next_messsage
         }
         catch (e) {
@@ -465,6 +468,34 @@ let chatuiComponent = class chatuiComponent {
             return this.errorHandler(bh, e, 'sd_l0ge4wGAqHKqH7uu');
         }
     }
+    startRecording(audioBlob = undefined, ...others) {
+        try {
+            var bh = this.__page_injector__
+                .get(app_n_services_sd_page_common_service__WEBPACK_IMPORTED_MODULE_2__.SDPageCommonService)
+                .constructFlowObject(this);
+            bh.input = { audioBlob: audioBlob };
+            bh.local = {};
+            bh = this.sd_k3Cu7gIf1cTrXnLh(bh);
+            //appendnew_next_startRecording
+        }
+        catch (e) {
+            return this.errorHandler(bh, e, 'sd_3d5ZuDpqBUuYXpLg');
+        }
+    }
+    getTyping(...others) {
+        try {
+            var bh = this.__page_injector__
+                .get(app_n_services_sd_page_common_service__WEBPACK_IMPORTED_MODULE_2__.SDPageCommonService)
+                .constructFlowObject(this);
+            bh.input = {};
+            bh.local = {};
+            bh = this.sd_G8WWeXV2ndP6DjcW(bh);
+            //appendnew_next_getTyping
+        }
+        catch (e) {
+            return this.errorHandler(bh, e, 'sd_W8wUIJWLiNvCwnHm');
+        }
+    }
     //appendnew_flow_chatuiComponent_start
     sd_o5tY7h4tkmXjbzY6(bh) {
         try {
@@ -481,7 +512,7 @@ let chatuiComponent = class chatuiComponent {
                     users: [this.currentUser, this.email],
                 });
             });
-            bh = this.sd_zFIU0JjrWqU66dUJ(bh);
+            bh = this.sd_CmQ6lgOSxzwlSsXX(bh);
             //appendnew_next_sd_o5tY7h4tkmXjbzY6
             return bh;
         }
@@ -489,13 +520,24 @@ let chatuiComponent = class chatuiComponent {
             return this.errorHandler(bh, e, 'sd_o5tY7h4tkmXjbzY6');
         }
     }
-    sd_zFIU0JjrWqU66dUJ(bh) {
+    sd_CmQ6lgOSxzwlSsXX(bh) {
         try {
-            //appendnew_next_sd_zFIU0JjrWqU66dUJ
+            this.page.sanitize = this.__page_injector__.get(_angular_platform_browser__WEBPACK_IMPORTED_MODULE_7__.DomSanitizer);
+            bh = this.sd_qr7qrYN89cwZ31NZ(bh);
+            //appendnew_next_sd_CmQ6lgOSxzwlSsXX
             return bh;
         }
         catch (e) {
-            return this.errorHandler(bh, e, 'sd_zFIU0JjrWqU66dUJ');
+            return this.errorHandler(bh, e, 'sd_CmQ6lgOSxzwlSsXX');
+        }
+    }
+    sd_qr7qrYN89cwZ31NZ(bh) {
+        try {
+            //appendnew_next_sd_qr7qrYN89cwZ31NZ
+            return bh;
+        }
+        catch (e) {
+            return this.errorHandler(bh, e, 'sd_qr7qrYN89cwZ31NZ');
         }
     }
     sd_80z4HMnaxyumELJl(bh) {
@@ -509,11 +551,78 @@ let chatuiComponent = class chatuiComponent {
             return this.errorHandler(bh, e, 'sd_80z4HMnaxyumELJl');
         }
     }
+    sd_zKE9esnUbRJqPdqd(bh) {
+        try {
+            const page = this.page;
+            console.log(page.msg);
+            bh = this.sd_XEnkHakQxJh2FgAW(bh);
+            //appendnew_next_sd_zKE9esnUbRJqPdqd
+            return bh;
+        }
+        catch (e) {
+            return this.errorHandler(bh, e, 'sd_zKE9esnUbRJqPdqd');
+        }
+    }
+    sd_XEnkHakQxJh2FgAW(bh) {
+        try {
+            if (this.sdService.operators['eq'](this.page.msg, undefined, undefined, undefined)) {
+                bh = this.sd_bPHMWbnlRdguHDNA(bh);
+            }
+            else if (this.sdService.operators['nempty'](this.page.msg, undefined, undefined, undefined)) {
+                bh = this.socketEmitingScript(bh);
+            }
+            return bh;
+        }
+        catch (e) {
+            return this.errorHandler(bh, e, 'sd_XEnkHakQxJh2FgAW');
+        }
+    }
+    sd_bPHMWbnlRdguHDNA(bh) {
+        try {
+            const page = this.page;
+            let player = document.querySelector('.audio-player');
+            console.log(player);
+            let chunks = [];
+            page.recorder.stop();
+            page.recorder.ondataavailable = (event) => {
+                console.log(event.data);
+                chunks.push(event.data);
+            };
+            page.recorder.onstop = () => {
+                const audioBlob = new Blob(chunks, { type: 'audio/wav' });
+                console.log('Blob created');
+                const audioUrl = URL.createObjectURL(audioBlob);
+                console.log('URL created');
+                console.log(page.sanitize);
+                page.audio = page.sanitize.bypassSecurityTrustUrl(audioUrl);
+                chunks = [];
+                console.log(page.audio);
+                bh.message = {
+                    message: { audio: page.audio },
+                    sender: this.currentUser,
+                    users: [this.currentUser, this.email],
+                };
+                let temp = this.messages;
+                this.messages = null;
+                this.messages = [...temp, bh.message];
+                // this.messages.push(bh.message);
+                console.log(this.messages);
+            };
+            page.isTyping = false;
+            page.isRecording = true;
+            //appendnew_next_sd_bPHMWbnlRdguHDNA
+            return bh;
+        }
+        catch (e) {
+            return this.errorHandler(bh, e, 'sd_bPHMWbnlRdguHDNA');
+        }
+    }
     socketEmitingScript(bh) {
         try {
             const page = this.page;
             console.log(page.msg);
             if (!page.msg) {
+                console.log('im herereerererererererererererererer');
                 return;
             }
             else {
@@ -540,7 +649,7 @@ let chatuiComponent = class chatuiComponent {
         }
     }
     saveMessageToBackend(bh) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_7__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_8__.__awaiter)(this, void 0, void 0, function* () {
             try {
                 const loginInstance = this.__page_injector__.get(app_sd_services_login__WEBPACK_IMPORTED_MODULE_4__.login);
                 let outputVariables = yield loginInstance.savingMessagsToTheDb(this.page.currentUser, this.page.email, this.page.msg);
@@ -557,6 +666,8 @@ let chatuiComponent = class chatuiComponent {
         try {
             const page = this.page;
             page.msg = '';
+            page.isTyping = false;
+            page.isRecording = true;
             //appendnew_next_sd_n9FllMMYVgDOKyeR
             return bh;
         }
@@ -588,7 +699,7 @@ let chatuiComponent = class chatuiComponent {
         }
     }
     sd_efbgGLcZqmoUHGig(bh) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_7__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_8__.__awaiter)(this, void 0, void 0, function* () {
             try {
                 const userInstance = this.__page_injector__.get(app_sd_services_user__WEBPACK_IMPORTED_MODULE_5__.user);
                 let outputVariables = yield userInstance.getMessagesFromTheBackend(this.page.fro, this.page.to);
@@ -610,6 +721,46 @@ let chatuiComponent = class chatuiComponent {
         }
         catch (e) {
             return this.errorHandler(bh, e, 'sd_cQiA7YIOeDwYdXMt');
+        }
+    }
+    sd_k3Cu7gIf1cTrXnLh(bh) {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_8__.__awaiter)(this, void 0, void 0, function* () {
+            try {
+                const page = this.page;
+                const startRecording = () => (0,tslib__WEBPACK_IMPORTED_MODULE_8__.__awaiter)(this, void 0, void 0, function* () {
+                    const stream = yield navigator.mediaDevices.getUserMedia({
+                        audio: true,
+                    });
+                    page.recorder = new MediaRecorder(stream);
+                    page.recorder.start();
+                    page.isTyping = true;
+                    page.isRecording = false;
+                });
+                startRecording();
+                //appendnew_next_sd_k3Cu7gIf1cTrXnLh
+                return bh;
+            }
+            catch (e) {
+                return yield this.errorHandler(bh, e, 'sd_k3Cu7gIf1cTrXnLh');
+            }
+        });
+    }
+    sd_G8WWeXV2ndP6DjcW(bh) {
+        try {
+            const page = this.page;
+            if (page.msg == '') {
+                page.isTyping = false;
+                page.isRecording = true;
+            }
+            else {
+                page.isTyping = true;
+                page.isRecording = false;
+            }
+            //appendnew_next_sd_G8WWeXV2ndP6DjcW
+            return bh;
+        }
+        catch (e) {
+            return this.errorHandler(bh, e, 'sd_G8WWeXV2ndP6DjcW');
         }
     }
     //appendnew_node
@@ -644,7 +795,7 @@ chatuiComponent.propDecorators = {
     showContacts: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__.Input, args: ['showContacts',] }],
     showContactsChange: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__.Output, args: ['showContactsChange',] }]
 };
-chatuiComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_7__.__decorate)([
+chatuiComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_8__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_6__.Component)({
         selector: 'bh-chatui',
         template: _chatui_template_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
@@ -1029,17 +1180,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tslib */ 34929);
 /* harmony import */ var _audioTest_template_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./audioTest.template.html?ngResource */ 30979);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 3184);
 /* harmony import */ var app_n_services_SDBaseService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! app/n-services/SDBaseService */ 25961);
 /* harmony import */ var app_n_services_sd_page_common_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! app/n-services/sd-page-common.service */ 25583);
 /* harmony import */ var app_n_services_service_caller_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! app/n-services/service-caller.service */ 44346);
-/* harmony import */ var recordrtc__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! recordrtc */ 93197);
-/* harmony import */ var recordrtc__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(recordrtc__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var wavesurfer_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! wavesurfer.js */ 11733);
+/* harmony import */ var wavesurfer_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(wavesurfer_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/platform-browser */ 50318);
 /*DEFAULT GENERATED TEMPLATE. DO NOT CHANGE CLASS NAME*/
 //CORE_REFERENCE_IMPORTS
 //append_imports_start
 
 
+ //_splitter_
  //_splitter_
  //_splitter_
  //_splitter_
@@ -1051,6 +1204,7 @@ let audioTestComponent = class audioTestComponent {
         this.__page_injector__ = __page_injector__;
         this.sdService = sdService;
         this.__serviceInvoker__ = __serviceInvoker__;
+        this.recorder = null;
         this.page = { dep: {} };
         this.__page_injector__.get(app_n_services_sd_page_common_service__WEBPACK_IMPORTED_MODULE_2__.SDPageCommonService).addPageDefaults(this.page);
         this.registerListeners();
@@ -1073,7 +1227,7 @@ let audioTestComponent = class audioTestComponent {
     }
     sd_c8KsLHt410oTzFis(bh) {
         try {
-            bh = this.sd_NR7gqqi3gbjohLwm(bh);
+            bh = this.sd_EDg7rxum0Lwa7SK3(bh);
             //appendnew_next_sd_c8KsLHt410oTzFis
             return bh;
         }
@@ -1088,14 +1242,66 @@ let audioTestComponent = class audioTestComponent {
                 .constructFlowObject(this);
             bh.input = { audioBlob: audioBlob };
             bh.local = {};
-            bh = this.sd_Adkw7ibAwwDzFMOO(bh);
+            bh = this.sd_oAZhZXgFr8EMWJeT(bh);
             //appendnew_next_sd_khO7p3skDabsNXJ4
         }
         catch (e) {
             return this.errorHandler(bh, e, 'sd_khO7p3skDabsNXJ4');
         }
     }
+    stopRecording(...others) {
+        try {
+            var bh = this.__page_injector__
+                .get(app_n_services_sd_page_common_service__WEBPACK_IMPORTED_MODULE_2__.SDPageCommonService)
+                .constructFlowObject(this);
+            bh.input = {};
+            bh.local = {};
+            bh = this.sd_1aH9s3a2BzqpQFyc(bh);
+            //appendnew_next_stopRecording
+        }
+        catch (e) {
+            return this.errorHandler(bh, e, 'sd_9hZUfNVTPIpsZW8k');
+        }
+    }
     //appendnew_flow_audioTestComponent_start
+    sd_EDg7rxum0Lwa7SK3(bh) {
+        try {
+            this.page.WaveSurfer = wavesurfer_js__WEBPACK_IMPORTED_MODULE_4__;
+            bh = this.wavsuferInital(bh);
+            //appendnew_next_sd_EDg7rxum0Lwa7SK3
+            return bh;
+        }
+        catch (e) {
+            return this.errorHandler(bh, e, 'sd_EDg7rxum0Lwa7SK3');
+        }
+    }
+    wavsuferInital(bh) {
+        try {
+            const page = this.page;
+            page.wavesurfer = wavesurfer_js__WEBPACK_IMPORTED_MODULE_4__.create({
+                container: '#waveform',
+                waveColor: 'violet',
+                progressColor: 'purple',
+            });
+            bh = this.sd_o3YoXae8yR8O7A8J(bh);
+            //appendnew_next_wavsuferInital
+            return bh;
+        }
+        catch (e) {
+            return this.errorHandler(bh, e, 'sd_Fs82pct0Waa0M6Fi');
+        }
+    }
+    sd_o3YoXae8yR8O7A8J(bh) {
+        try {
+            this.page.sanitizer = this.__page_injector__.get(_angular_platform_browser__WEBPACK_IMPORTED_MODULE_5__.DomSanitizer);
+            bh = this.sd_NR7gqqi3gbjohLwm(bh);
+            //appendnew_next_sd_o3YoXae8yR8O7A8J
+            return bh;
+        }
+        catch (e) {
+            return this.errorHandler(bh, e, 'sd_o3YoXae8yR8O7A8J');
+        }
+    }
     sd_NR7gqqi3gbjohLwm(bh) {
         try {
             //appendnew_next_sd_NR7gqqi3gbjohLwm
@@ -1105,52 +1311,51 @@ let audioTestComponent = class audioTestComponent {
             return this.errorHandler(bh, e, 'sd_NR7gqqi3gbjohLwm');
         }
     }
-    sd_Adkw7ibAwwDzFMOO(bh) {
-        try {
-            bh.RecordRTC = recordrtc__WEBPACK_IMPORTED_MODULE_4__;
-            bh = this.sd_oAZhZXgFr8EMWJeT(bh);
-            //appendnew_next_sd_Adkw7ibAwwDzFMOO
-            return bh;
-        }
-        catch (e) {
-            return this.errorHandler(bh, e, 'sd_Adkw7ibAwwDzFMOO');
-        }
-    }
     sd_oAZhZXgFr8EMWJeT(bh) {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__awaiter)(this, void 0, void 0, function* () {
+            try {
+                const page = this.page;
+                const startRecording = () => (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__awaiter)(this, void 0, void 0, function* () {
+                    const stream = yield navigator.mediaDevices.getUserMedia({
+                        audio: true,
+                    });
+                    page.recorder = new MediaRecorder(stream);
+                    page.recorder.start();
+                });
+                startRecording();
+                //appendnew_next_sd_oAZhZXgFr8EMWJeT
+                return bh;
+            }
+            catch (e) {
+                return yield this.errorHandler(bh, e, 'sd_oAZhZXgFr8EMWJeT');
+            }
+        });
+    }
+    sd_1aH9s3a2BzqpQFyc(bh) {
         try {
             const page = this.page;
-            navigator.mediaDevices
-                .getUserMedia({
-                audio: true,
-            })
-                .then((stream) => {
-                let options = {
-                    mimeType: 'audio/webm',
-                    audioBitsPerSecond: 128000,
-                };
-                let recorder = new recordrtc__WEBPACK_IMPORTED_MODULE_4__.StereoAudioRecorder(stream, {
-                    type: 'audio',
-                    mimeType: 'audio/mp3',
-                });
-                recorder.record();
-                setTimeout(() => {
-                    recorder.stop(() => {
-                        let blob = recorder.blob;
-                        page.audio = {
-                            type: blob.type,
-                            url: URL.createObjectURL(blob),
-                        };
-                    });
-                }, 5000); // Stop recording after 5 seconds
-            })
-                .catch((err) => {
-                console.log(err);
-            });
-            //appendnew_next_sd_oAZhZXgFr8EMWJeT
+            let player = document.querySelector('.audio-player');
+            console.log(player);
+            let chunks = [];
+            page.recorder.stop();
+            page.recorder.ondataavailable = (event) => {
+                console.log(event.data);
+                chunks.push(event.data);
+            };
+            page.recorder.onstop = () => {
+                const audioBlob = new Blob(chunks, { type: 'audio/wav' });
+                const audioUrl = URL.createObjectURL(audioBlob);
+                console.log(page.sanitizer);
+                page.audio = page.sanitizer.bypassSecurityTrustUrl(audioUrl);
+                chunks = [];
+                console.log(page.audio);
+                page.wavesurfer.load(' https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3');
+            };
+            //appendnew_next_sd_1aH9s3a2BzqpQFyc
             return bh;
         }
         catch (e) {
-            return this.errorHandler(bh, e, 'sd_oAZhZXgFr8EMWJeT');
+            return this.errorHandler(bh, e, 'sd_1aH9s3a2BzqpQFyc');
         }
     }
     //appendnew_node
@@ -1173,12 +1378,15 @@ let audioTestComponent = class audioTestComponent {
     }
 };
 audioTestComponent.ctorParameters = () => [
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_5__.Injector },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_7__.Injector },
     { type: app_n_services_SDBaseService__WEBPACK_IMPORTED_MODULE_1__.SDBaseService },
     { type: app_n_services_service_caller_service__WEBPACK_IMPORTED_MODULE_3__.__NEU_ServiceInvokerService__ }
 ];
+audioTestComponent.propDecorators = {
+    recorder: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_7__.Input, args: ['recorder',] }]
+};
 audioTestComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_5__.Component)({
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_7__.Component)({
         selector: 'bh-audioTest',
         template: _audioTest_template_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
         providers: [
@@ -1305,7 +1513,7 @@ let homeComponent = class homeComponent {
     sd_20We0OQUJFrlSZdc(bh) {
         try {
             this.page.io = socket_io_client__WEBPACK_IMPORTED_MODULE_4__.io;
-            bh = this.sd_tkDNX2QuSc92w5ZV(bh);
+            bh = this.sd_fbtPsC0XB2GiVNJI(bh);
             //appendnew_next_sd_20We0OQUJFrlSZdc
             return bh;
         }
@@ -1313,15 +1521,26 @@ let homeComponent = class homeComponent {
             return this.errorHandler(bh, e, 'sd_20We0OQUJFrlSZdc');
         }
     }
+    sd_fbtPsC0XB2GiVNJI(bh) {
+        try {
+            this.page.url = bh.system.environment.properties.socketUrl;
+            bh = this.sd_tkDNX2QuSc92w5ZV(bh);
+            //appendnew_next_sd_fbtPsC0XB2GiVNJI
+            return bh;
+        }
+        catch (e) {
+            return this.errorHandler(bh, e, 'sd_fbtPsC0XB2GiVNJI');
+        }
+    }
     sd_tkDNX2QuSc92w5ZV(bh) {
         try {
             const page = this.page;
             console.log(page.system.oauthService, '+++++++++');
-            page.socket = page.io('http://localhost:8081');
+            page.socket = page.io(page.url);
             page.socket.on('connection', (data) => {
                 console.log('Connected to server' + data);
             });
-            page.socket.current = (0,socket_io_client__WEBPACK_IMPORTED_MODULE_4__.io)('http://localhost:8081/');
+            page.socket.current = (0,socket_io_client__WEBPACK_IMPORTED_MODULE_4__.io)(page.url);
             page.socket.current.emit('add-user', bh.system.currentUser.username);
             bh = this.sd_qidpAg8ko6W9l4gm(bh);
             bh = this.fetchUser(bh);
@@ -3631,7 +3850,8 @@ const environment = {
         "isIDSEnabled": "true",
         "webAppMountpoint": "web",
         "NGFORAGE_MOBILE_DRIVER": "INDEXED_DB",
-        "ip": "10.10.11.149"
+        "ip": "10.10.11.149",
+        "socketUrl": "https://chatwithme-1c2d.onrender.com/"
     }
 };
 
@@ -3787,7 +4007,7 @@ module.exports = "<div fxLayout=\"row wrap\" fxLayoutAlign=\"center stretch\" [f
   \********************************************************************/
 /***/ ((module) => {
 
-module.exports = "<div fxLayout=\"column \" style=\"height: calc( 100vh - 56px );background-image: url(&apos;https://i.pinimg.com/564x/8c/98/99/8c98994518b575bfd8c949e91d20548b.jpg&apos;)\" class=\"chat-container\" fxLayoutAlign=\"start stretch\" [fxShow]=\"true\">\n  <div fxLayout=\"row wrap\" style=\"height:50px;padding:10px;\" class=\"accent-color\" fxLayoutGap=\"1em\" fxLayoutAlign=\"start center\" [fxShow]=\"true\"><mat-icon style=\"cursor:pointer;\" (click)=\"toGoBack()\">keyboard_arrow_left</mat-icon><mat-icon style=\"font-size:30px\">account_circle</mat-icon>\n    <div style=\"color: black;\">\n      {{email}}\n    </div>\n  </div><bh-messages style=\"flex:2; overflow:auto;\" [messages]=\"this.messages\" [currentUser]=\"this.currentUser\"></bh-messages>\n  <div fxLayout=\"row wrap\" style=\"background-color:whitesmoke;padding:10px;\" fxLayoutGap=\"1em\" fxLayoutAlign=\"start center\" [fxShow]=\"true\"><input [(ngModel)]=\"page.msg\" (keyup.enter)=\"messsage()\" style=\"    width: calc( 100% - 25px - 4em );border: none;     height: 30px;border-radius: 20px;outline: none;font-size: large;\" class=\"padding-1\">\n    <mat-icon style=\"cursor:pointer;\" (click)=\"messsage()\" *ngIf=\"page.msg \">send</mat-icon><mat-icon *ngIf=\"!page.msg\">settings_voice</mat-icon>\n  </div>\n</div>";
+module.exports = "<div fxLayout=\"column \" style=\"height: calc( 100vh - 56px );background-image: url(&apos;https://i.pinimg.com/564x/8c/98/99/8c98994518b575bfd8c949e91d20548b.jpg&apos;)\" class=\"chat-container\" fxLayoutAlign=\"start stretch\" [fxShow]=\"true\">\n  <div fxLayout=\"row wrap\" style=\"height:50px;padding:10px;\" class=\"accent-color\" fxLayoutGap=\"1em\" fxLayoutAlign=\"start center\" [fxShow]=\"true\"><mat-icon style=\"cursor:pointer;\" (click)=\"toGoBack()\">keyboard_arrow_left</mat-icon><mat-icon style=\"font-size:30px\">account_circle</mat-icon>\n    <div style=\"color: black;\">\n      {{email}}\n    </div>\n  </div><bh-messages style=\"flex:2; overflow:auto;\" [messages]=\"this.messages\" [currentUser]=\"this.currentUser\"></bh-messages>\n  <div fxLayout=\"row wrap\" style=\"background-color:whitesmoke;padding:10px;\" fxLayoutGap=\"1em\" fxLayoutAlign=\"start center\" [fxShow]=\"true\"><input [(ngModel)]=\"page.msg\" (keyup.enter)=\"messsage()\" (input)=\"getTyping()\" style=\"width: calc( 100% - 25px - 4em );border: none;     height: 15px;border-radius: 20px;outline: none;font-size: large;\" class=\"padding-1\">\n    <mat-icon style=\"cursor:pointer;\" (click)=\"messsage()\" *ngIf=\"page.isTyping\">send</mat-icon><mat-icon class=\"cursor\" *ngIf=\"page.isRecording\" (click)=\"startRecording()\">settings_voice</mat-icon>\n  </div>\n</div>";
 
 /***/ }),
 
@@ -3807,7 +4027,7 @@ module.exports = "<div id=\"angularRoot\"></div>";
   \***********************************************************************/
 /***/ ((module) => {
 
-module.exports = "<div fxLayout=\"column wrap\" class=\"padding-1\" fxLayoutAlign=\"start stretch\" [fxShow]=\"true\">\n  <div *ngFor=\"let message of messages\" class=\"chat-box\">\n    <div (click)=\"func($event)\" [ngClass]=\"{ &apos;sent&apos; : message.sender == currentUser , &apos;received&apos; : message.sender.email != this.currentUser }\" class=\"chat-box\">\n      <div>\n        {{message.message.text}}\n      </div>\n      <div class=\"time\">\n        10:00am </div>\n    </div>\n  </div>\n</div>";
+module.exports = "<div fxLayout=\"column wrap\" class=\"padding-1\" fxLayoutAlign=\"start stretch\" [fxShow]=\"true\">\n  <div *ngFor=\"let message of messages\" class=\"chat-box\">\n    <div (click)=\"func($event)\" [ngClass]=\"{ &apos;sent&apos; : message.sender == currentUser , &apos;received&apos; : message.sender.email != this.currentUser }\" class=\"chat-box\">\n      <div>\n        {{message.message.text}}\n      </div><audio controls *ngIf=\"message.message.audio\" [src]=\"message.message.audio\">\n\n      </audio>\n      <div *ngIf=\"!message.message.audio\" class=\"time\">\n        10:00am </div>\n    </div>\n  </div>\n</div>";
 
 /***/ }),
 
@@ -3827,7 +4047,7 @@ module.exports = "<div fxLayout=\"row wrap\" class=\"padding-2\" fxLayoutAlign=\
   \*********************************************************************/
 /***/ ((module) => {
 
-module.exports = "<div fxLayout=\"row wrap\" fxLayoutAlign=\"start stretch\" [fxShow]=\"true\"><audio controls [autoplay]=\"true\" [loop]=\"true\" id=\"audio-player\" *ngIf=\"page.audio\">\n    <source src=\"{{page.audio.url}}\" type=\"audio/webm;codecs=opus\">\n  </audio><button mat-button (click)=\"sd_khO7p3skDabsNXJ4()\">start recording</button></div>";
+module.exports = "<div id=\"waveform\">\n</div>\n<div fxLayout=\"row wrap\" fxLayoutAlign=\"start stretch\" [fxShow]=\"true\"><audio controls [autoplay]=\"false\" [loop]=\"false\" id=\"audio-player\" *ngIf=\"page.audio\" [src]=\"page.audio\">\n    <source src=\"{{page.audio}}\" type=\"audio/audio/wav\">\n  </audio><mat-icon (click)=\"sd_khO7p3skDabsNXJ4()\">settings_voice</mat-icon><mat-icon (click)=\"stopRecording()\">send</mat-icon></div>";
 
 /***/ }),
 
@@ -3837,7 +4057,7 @@ module.exports = "<div fxLayout=\"row wrap\" fxLayoutAlign=\"start stretch\" [fx
   \****************************************************************/
 /***/ ((module) => {
 
-module.exports = "<div fxLayout=\"column wrap\" style=\"background-color:white;\" fxLayoutAlign=\"start stretch\" [fxShow]=\"true\">\n  <div fxLayout=\"row wrap\" class=\"header padding-1\" fxLayoutAlign=\"space-between center\" [fxShow]=\"true\">\n    <div class=\"textColor\">\n      Home</div><mat-icon (click)=\"logout()\">power_settings_new</mat-icon>\n  </div>\n  <div style=\"background:#white; height:100%;\">\n    <div fxLayout=\"row wrap\" fxLayoutAlign=\"start stretch\" [fxShow]=\"true\">\n      <div fxLayout=\"column wrap\" style=\"overflow-y: scroll;scrollbar-width: thin;scrollbar-color: #ddd #999;\" class=\"chat-ui contact\" fxLayoutGap=\"6px\" fxLayoutAlign=\"start stretch\" [fxShow]=\"true\" [ngClass]=\"{ &apos;showContacts&apos; : page.selected }\" *ngIf=\"page.showContacts\">\n        <div fxLayout=\"column wrap\" fxLayoutGap=\"5px\" fxLayoutAlign=\"start stretch\" [fxShow]=\"true\">\n          <div fxLayout=\"row \" class=\"user\" fxLayoutAlign=\"start center\" [fxShow]=\"true\" *ngFor=\"let user of page.users\" (click)=\"sendUserInfo(user.email)\" [ngClass]=\"{ &apos;showContacts&apos; : page.selected , &apos;selected&apos; : page.selected === user.email  }\"><img [src]=\"&apos;https://cdn2.iconfinder.com/data/icons/avatar-profile/449/avatar_user_default_cardigan_contact_profile-512.png&apos;\" style=\"width:35px;height:35px;\">\n            <div style=\"color: black;\" class=\"padding-1\">\n              {{user.email}}\n            </div>\n          </div>\n        </div>\n      </div><bh-chatui style=\"flex:2;\" [email]=\"page.selected\" *ngIf=\"page.selected\" [currentUser]=\"page.system.currentUser.username\" [socket]=\"page.socket\" [messages]=\"page.result\" [ngClass]=\"{ &apos;showContacts&apos; :  !page.selected }\" [showContacts]=\"page.showContacts\" (showContactsChange)=\"toConsoleBackButton($event)\"></bh-chatui>\n      <div fxLayout=\"column wrap\" class=\"welcome chat_container\" fxLayoutAlign=\"center center\" [fxShow]=\"true\" *ngIf=\"!page.selected\" fxHide.lt-sm=\"true\">\n        <div class=\"font-4\">\n          Welcome</div>\n      </div>\n    </div>\n  </div>\n</div>";
+module.exports = "<div fxLayout=\"column wrap\" style=\"background-color:white;\" fxLayoutAlign=\"start stretch\" [fxShow]=\"true\">\n  <div fxLayout=\"row wrap\" class=\"header padding-1\" fxLayoutAlign=\"space-between center\" [fxShow]=\"true\">\n    <div class=\"textColor\">\n      Home</div><mat-icon style=\"cursor:pointer;\" (click)=\"logout()\">power_settings_new</mat-icon>\n  </div>\n  <div style=\"background:#white; height:100%;\">\n    <div fxLayout=\"row wrap\" fxLayoutAlign=\"start stretch\" [fxShow]=\"true\">\n      <div fxLayout=\"column wrap\" style=\"overflow-y: scroll;scrollbar-width: thin;scrollbar-color: #ddd #999;\" class=\"chat-ui contact\" fxLayoutGap=\"6px\" fxLayoutAlign=\"start stretch\" [fxShow]=\"true\" [ngClass]=\"{ &apos;showContacts&apos; : page.selected }\" *ngIf=\"page.showContacts\">\n        <div fxLayout=\"column wrap\" fxLayoutGap=\"5px\" fxLayoutAlign=\"start stretch\" [fxShow]=\"true\">\n          <div fxLayout=\"row \" class=\"user\" fxLayoutAlign=\"start center\" [fxShow]=\"true\" *ngFor=\"let user of page.users\" (click)=\"sendUserInfo(user.email)\" [ngClass]=\"{ &apos;showContacts&apos; : page.selected , &apos;selected&apos; : page.selected === user.email  }\"><img [src]=\"&apos;https://cdn2.iconfinder.com/data/icons/avatar-profile/449/avatar_user_default_cardigan_contact_profile-512.png&apos;\" style=\"width:35px;height:35px;\">\n            <div style=\"color: black;\" class=\"padding-1\">\n              {{user.email}}\n            </div>\n          </div>\n        </div>\n      </div><bh-chatui style=\"flex:2;\" [email]=\"page.selected\" *ngIf=\"page.selected\" [currentUser]=\"page.system.currentUser.username\" [socket]=\"page.socket\" [messages]=\"page.result\" [ngClass]=\"{ &apos;showContacts&apos; :  !page.selected }\" [showContacts]=\"page.showContacts\" (showContactsChange)=\"toConsoleBackButton($event)\"></bh-chatui>\n      <div fxLayout=\"column wrap\" class=\"welcome chat_container\" fxLayoutAlign=\"center center\" [fxShow]=\"true\" *ngIf=\"!page.selected\" fxHide.lt-sm=\"true\">\n        <div class=\"font-4\">\n          Welcome</div>\n      </div>\n    </div>\n  </div>\n</div>";
 
 /***/ }),
 

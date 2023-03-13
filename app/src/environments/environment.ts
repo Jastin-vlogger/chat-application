@@ -11,6 +11,6 @@ export const environment = {
         "webAppMountpoint": "web",
         "NGFORAGE_MOBILE_DRIVER": "INDEXED_DB",
         "ip": "10.10.11.149",
-        "socketUrl": "http://localhost:8081"
+        "socketUrl": "https://chatwithme-1c2d.onrender.com/"
     }
 }

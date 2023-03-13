@@ -4510,6 +4510,9 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
 .chat-ui {
   background-color: #ffffff;
 }
+.cursor {
+  cursor: pointer;
+}
 .user {
   cursor: pointer;
   background-color: whitesmoke;
