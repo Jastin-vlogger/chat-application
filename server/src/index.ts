@@ -63,6 +63,7 @@ console.log('process.env.pm_id', process.env.pm_id);
         app.use(express.json());
         // load global pre middlewares here
         app.set('base', contextPath);
+        app.set('trust proxy', 1)
         /****************************
          * Load server start scripts
          ****************************/
