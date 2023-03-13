@@ -50,7 +50,7 @@
             "appName": "sample",
             "namespace": "com.neutrinos.sample",
             "useDefaultExceptionUI": true,
-            "isIDSEnabled": "false",
+            "isIDSEnabled": "true",
             "SSD_BASE_PATH": "/api",
             "SSD_DEFAULT_PORT": "8081",
             "webAppMountpoint": "web",
