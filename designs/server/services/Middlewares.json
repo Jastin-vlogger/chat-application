@@ -89,6 +89,12 @@
                     "rowId": "sd_JFcoP8MdpC2oeCqp",
                     "valid": true,
                     "type": "process.env"
+                },
+                {
+                    "key": "https://phenomenal-horse-39317f.netlify.app",
+                    "rowId": "sd_WEKN34WdCHS3veZq",
+                    "valid": true,
+                    "type": "str"
                 }
             ]
         },
@@ -123,7 +129,7 @@
         "cookieMaxAge": "",
         "cookiePath": "",
         "cookieSameSite": "\"none\"",
-        "proxy": false,
+        "proxy": true,
         "resave": false,
         "rolling": false,
         "saveUninitialized": false,

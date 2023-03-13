@@ -8,7 +8,11 @@ import { getConnection } from 'typeorm'; //_splitter_
 export let Middlewares = {
   cors: () => {
     let corsOptions = {
-      origin: [process.env.usingIP, process.env.backendUrl],
+      origin: [
+        process.env.usingIP,
+        process.env.backendUrl,
+        'https://phenomenal-horse-39317f.netlify.app',
+      ],
 
       credentials: true,
       maxAge: 2592000000,
@@ -21,7 +25,7 @@ export let Middlewares = {
     let sess: expressSession.SessionOptions = {
       cookie: { secure: true, httpOnly: false, sameSite: 'none' },
 
-      proxy: false,
+      proxy: true,
 
       resave: false,
 
