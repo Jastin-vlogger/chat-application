@@ -135,7 +135,7 @@ export class loginComponent {
       const page = this.page;
       bh.system.oauthService.login('home');
 
-      bh = this.sd_9ZojjY70W5uc5NnP(bh);
+      bh = this.sd_b0mR9TD2ivsS4zpy(bh);
       //appendnew_next_sd_ItbJu2uqoJCqFe0j
       return bh;
     } catch (e) {
@@ -143,7 +143,7 @@ export class loginComponent {
     }
   }
 
-  async sd_9ZojjY70W5uc5NnP(bh) {
+  async sd_b0mR9TD2ivsS4zpy(bh) {
     try {
       const { paramObj: qprm, path: path } =
         this.sdService.getPathAndQParamsObj('/home');
@@ -153,10 +153,10 @@ export class loginComponent {
           queryParams: Object.assign(qprm, ''),
         });
 
-      //appendnew_next_sd_9ZojjY70W5uc5NnP
+      //appendnew_next_sd_b0mR9TD2ivsS4zpy
       return bh;
     } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_9ZojjY70W5uc5NnP');
+      return await this.errorHandler(bh, e, 'sd_b0mR9TD2ivsS4zpy');
     }
   }
 

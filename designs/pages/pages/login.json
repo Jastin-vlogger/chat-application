@@ -139,7 +139,7 @@
         "y": 140,
         "wires": [
             [
-                "sd_9ZojjY70W5uc5NnP"
+                "sd_b0mR9TD2ivsS4zpy"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -475,7 +475,7 @@
         "generated": true
     },
     {
-        "id": "sd_9ZojjY70W5uc5NnP",
+        "id": "sd_b0mR9TD2ivsS4zpy",
         "type": "Navigation",
         "z": "sd_eYsPH5C9YPH39JLC",
         "viewType": "client-pages",
@@ -489,9 +489,9 @@
         "qparamsMap": "",
         "qparamsArray": "",
         "resultMapping": "",
-        "functionName": "sd_9ZojjY70W5uc5NnP",
+        "functionName": "sd_b0mR9TD2ivsS4zpy",
         "category": "Navigation",
-        "x": 325,
+        "x": 345,
         "y": 140,
         "wires": [
             []
