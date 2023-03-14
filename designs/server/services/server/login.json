@@ -203,11 +203,11 @@
         "pipeline": "",
         "functionName": "sd_7RsJxY5DdtljZZN2",
         "category": "Storage",
-        "x": 605,
-        "y": 220,
+        "x": 625,
+        "y": 240,
         "wires": [
             [
-                "sd_MPVSVQFXN25cryU2"
+                "sd_cJwTOT1SIj5wU9wH"
             ]
         ],
         "__ssdTypeInputs__": {
@@ -287,8 +287,8 @@
         },
         "functionName": "loginSucess",
         "category": "HTTP",
-        "x": 865,
-        "y": 220,
+        "x": 925,
+        "y": 240,
         "wires": [],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
@@ -471,7 +471,7 @@
         },
         "functionName": "alreadyPresent",
         "category": "HTTP",
-        "x": 620,
+        "x": 645,
         "y": 100,
         "wires": [],
         "__n_excludedFromValidation__": {},
@@ -940,6 +940,65 @@
         "x": 460,
         "y": 480,
         "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "login",
+        "generated": true
+    },
+    {
+        "id": "sd_FKUoqhcYkAsu3Gx9",
+        "type": "Session",
+        "z": "SSD_SERVICE_ID_sd_uVwNpKUSlSUYBMYa",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "get",
+        "data": "",
+        "resultMapping": "bh.result",
+        "dataMapping": "bh",
+        "functionName": "sd_FKUoqhcYkAsu3Gx9",
+        "category": "HTTP",
+        "x": 825,
+        "y": 240,
+        "wires": [
+            [
+                "sd_MPVSVQFXN25cryU2"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "resultMapping": {
+                "type": "bh",
+                "value": "result",
+                "constant": false
+            },
+            "dataMapping": {
+                "type": "bh",
+                "value": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "login",
+        "generated": true
+    },
+    {
+        "id": "sd_cJwTOT1SIj5wU9wH",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_uVwNpKUSlSUYBMYa",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.result)",
+        "functionName": "sd_cJwTOT1SIj5wU9wH",
+        "category": "Function",
+        "x": 720,
+        "y": 240,
+        "wires": [
+            [
+                "sd_FKUoqhcYkAsu3Gx9"
+            ]
+        ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
         "serviceName": "login",
