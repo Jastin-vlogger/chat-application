@@ -9,12 +9,8 @@
             "component": "homeComponent",
             "canActivate": {
                 "edited": true,
-                "value": "NeutrinosAuthGuardService"
+                "value": ""
             }
-        },
-        {
-            "path": "audio",
-            "component": "audioTestComponent"
         },
         {
             "path": "''",

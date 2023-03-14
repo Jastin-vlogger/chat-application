@@ -12,9 +12,9 @@ import {
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.service'; //_splitter_
+import { Router } from '@angular/router'; //_splitter_
 import { login } from 'app/sd-services/login'; //_splitter_
 import { MatSnackBar } from '@angular/material/snack-bar'; //_splitter_
-import { Router } from '@angular/router'; //_splitter_
 import { FormControl, Validators, FormBuilder } from '@angular/forms'; //_splitter_
 //append_imports_end
 
@@ -135,10 +135,28 @@ export class loginComponent {
       const page = this.page;
       bh.system.oauthService.login('home');
 
+      bh = this.sd_9ZojjY70W5uc5NnP(bh);
       //appendnew_next_sd_ItbJu2uqoJCqFe0j
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_ItbJu2uqoJCqFe0j');
+    }
+  }
+
+  async sd_9ZojjY70W5uc5NnP(bh) {
+    try {
+      const { paramObj: qprm, path: path } =
+        this.sdService.getPathAndQParamsObj('/home');
+      await this.__page_injector__
+        .get(Router)
+        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
+          queryParams: Object.assign(qprm, ''),
+        });
+
+      //appendnew_next_sd_9ZojjY70W5uc5NnP
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_9ZojjY70W5uc5NnP');
     }
   }
 

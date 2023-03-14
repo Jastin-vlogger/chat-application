@@ -138,7 +138,9 @@
         "x": 205,
         "y": 140,
         "wires": [
-            []
+            [
+                "sd_9ZojjY70W5uc5NnP"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
@@ -464,6 +466,33 @@
         "category": "Navigation",
         "x": 700,
         "y": 360,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "loginComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_9ZojjY70W5uc5NnP",
+        "type": "Navigation",
+        "z": "sd_eYsPH5C9YPH39JLC",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/home",
+        "pathMap": "",
+        "pathparams": "",
+        "pathparamsMap": "",
+        "qparams": "",
+        "qparamsMap": "",
+        "qparamsArray": "",
+        "resultMapping": "",
+        "functionName": "sd_9ZojjY70W5uc5NnP",
+        "category": "Navigation",
+        "x": 325,
+        "y": 140,
         "wires": [
             []
         ],
