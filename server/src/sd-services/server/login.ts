@@ -384,9 +384,8 @@ export class login {
     try {
       let requestObject = bh.web.req;
       if (requestObject.session) {
-        bh.local.email = JSON.parse(JSON.stringify(requestObject.session));
+        requestObject.session.data = bh.local.email;
       }
-
       this.tracerService.sendData(spanInst, bh);
       await this.loginSucess(bh, parentSpanInst);
       //appendnew_next_sd_FKUoqhcYkAsu3Gx9
@@ -456,7 +455,7 @@ export class login {
     try {
       console.log(bh.user.data.userInfo.username);
       let user = bh.user.data.userInfo.username;
-
+      console.log(bh.user.email, 'lakdhi lahore diya');
       bh.local.query = { email: { $ne: user } };
 
       this.tracerService.sendData(spanInst, bh);

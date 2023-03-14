@@ -613,7 +613,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "console.log(bh.user.data.userInfo.username);\nlet user = bh.user.data.userInfo.username;\n\nbh.local.query = { email: { $ne: user} }\n\n",
+        "script": "console.log(bh.user.data.userInfo.username);\nlet user = bh.user.data.userInfo.username;\nconsole.log(bh.user.email , \"lakdhi lahore diya\")\nbh.local.query = { email: { $ne: user} }\n\n",
         "functionName": "sd_zhdeOdCQMI3iYrSR",
         "category": "Function",
         "x": 305,
@@ -952,10 +952,10 @@
         "viewType": "server",
         "nodeType": "flow",
         "name": "",
-        "operationType": "get",
+        "operationType": "update",
         "data": "",
         "resultMapping": "bh.local.email",
-        "dataMapping": "bh",
+        "dataMapping": "bh.local.email",
         "functionName": "sd_FKUoqhcYkAsu3Gx9",
         "category": "HTTP",
         "x": 825,
@@ -972,8 +972,8 @@
                 "constant": false
             },
             "dataMapping": {
-                "type": "bh",
-                "value": "",
+                "type": "bh.local",
+                "value": "email",
                 "constant": false
             }
         },
