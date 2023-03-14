@@ -207,7 +207,7 @@
         "y": 240,
         "wires": [
             [
-                "sd_cJwTOT1SIj5wU9wH"
+                "sd_MPVSVQFXN25cryU2"
             ]
         ],
         "__ssdTypeInputs__": {
@@ -954,21 +954,19 @@
         "name": "",
         "operationType": "get",
         "data": "",
-        "resultMapping": "bh.result",
+        "resultMapping": "bh.local.email",
         "dataMapping": "bh",
         "functionName": "sd_FKUoqhcYkAsu3Gx9",
         "category": "HTTP",
-        "x": 825,
-        "y": 240,
+        "x": 865,
+        "y": 120,
         "wires": [
-            [
-                "sd_MPVSVQFXN25cryU2"
-            ]
+            []
         ],
         "__ssdTypeInputs__": {
             "resultMapping": {
-                "type": "bh",
-                "value": "result",
+                "type": "bh.local",
+                "value": "email",
                 "constant": false
             },
             "dataMapping": {
@@ -978,9 +976,8 @@
             }
         },
         "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "login",
-        "generated": true
+        "generateNext": true,
+        "serviceName": "login"
     },
     {
         "id": "sd_cJwTOT1SIj5wU9wH",
@@ -989,19 +986,18 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "console.log(bh.result)",
+        "script": "console.log(bh.local.email)",
         "functionName": "sd_cJwTOT1SIj5wU9wH",
         "category": "Function",
-        "x": 720,
-        "y": 240,
+        "x": 760,
+        "y": 120,
         "wires": [
             [
                 "sd_FKUoqhcYkAsu3Gx9"
             ]
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "login",
-        "generated": true
+        "generateNext": true,
+        "serviceName": "login"
     }
 ]
