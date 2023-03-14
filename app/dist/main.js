@@ -2140,6 +2140,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "appRoutes": () => (/* binding */ appRoutes),
 /* harmony export */   "startupServiceFactory": () => (/* binding */ startupServiceFactory)
 /* harmony export */ });
+/* harmony import */ var neutrinos_oauth_client__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! neutrinos-oauth-client */ 97786);
 /* harmony import */ var _not_found_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../not-found.component */ 16942);
 /* harmony import */ var _layout_layout_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../layout/layout.component */ 36674);
 /* harmony import */ var _directives_imgSrc_directive__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../directives/imgSrc.directive */ 31077);
@@ -2162,6 +2163,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../components/navbar/navbar.component */ 33252);
 /* harmony import */ var _components_pages_login_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../components/pages/login.component */ 15978);
 /* harmony import */ var _components_Heading_heading_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../components/Heading/heading.component */ 12613);
+
 
 
 
@@ -2276,7 +2278,11 @@ const appProviders = [
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_START
 const appRoutes = [
     { path: 'test', component: _components_pages_login_component__WEBPACK_IMPORTED_MODULE_18__.loginComponent },
-    { path: 'home', component: _components_pages_home_component__WEBPACK_IMPORTED_MODULE_13__.homeComponent },
+    {
+        path: 'home',
+        component: _components_pages_home_component__WEBPACK_IMPORTED_MODULE_13__.homeComponent,
+        canActivate: [neutrinos_oauth_client__WEBPACK_IMPORTED_MODULE_22__.NeutrinosAuthGuardService],
+    },
     { path: 'audio', component: _components_pages_audioTest_component__WEBPACK_IMPORTED_MODULE_8__.audioTestComponent },
     { path: '', redirectTo: 'test', pathMatch: 'full' },
     { path: '**', component: _not_found_component__WEBPACK_IMPORTED_MODULE_0__.PageNotFoundComponent },

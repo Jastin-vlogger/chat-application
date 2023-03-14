@@ -121,7 +121,11 @@ export const appProviders = [
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_START
 export const appRoutes = [
   { path: 'test', component: loginComponent },
-  { path: 'home', component: homeComponent },
+  {
+    path: 'home',
+    component: homeComponent,
+    canActivate: [NeutrinosAuthGuardService],
+  },
   { path: 'audio', component: audioTestComponent },
   { path: '', redirectTo: 'test', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },

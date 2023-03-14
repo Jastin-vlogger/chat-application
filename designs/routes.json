@@ -6,7 +6,11 @@
         },
         {
             "path": "home",
-            "component": "homeComponent"
+            "component": "homeComponent",
+            "canActivate": {
+                "edited": true,
+                "value": "NeutrinosAuthGuardService"
+            }
         },
         {
             "path": "audio",
