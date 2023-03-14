@@ -1725,9 +1725,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var app_n_services_SDBaseService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! app/n-services/SDBaseService */ 25961);
 /* harmony import */ var app_n_services_sd_page_common_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! app/n-services/sd-page-common.service */ 25583);
 /* harmony import */ var app_n_services_service_caller_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! app/n-services/service-caller.service */ 44346);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ 52816);
 /* harmony import */ var app_sd_services_login__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! app/sd-services/login */ 7815);
-/* harmony import */ var _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material/snack-bar */ 32528);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ 52816);
+/* harmony import */ var _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/snack-bar */ 32528);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ 90587);
 /*DEFAULT GENERATED TEMPLATE. DO NOT CHANGE CLASS NAME*/
 //CORE_REFERENCE_IMPORTS
@@ -1842,12 +1842,30 @@ let loginComponent = class loginComponent {
         try {
             const page = this.page;
             bh.system.oauthService.login('home');
+            bh = this.sd_b0mR9TD2ivsS4zpy(bh);
             //appendnew_next_sd_ItbJu2uqoJCqFe0j
             return bh;
         }
         catch (e) {
             return this.errorHandler(bh, e, 'sd_ItbJu2uqoJCqFe0j');
         }
+    }
+    sd_b0mR9TD2ivsS4zpy(bh) {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__awaiter)(this, void 0, void 0, function* () {
+            try {
+                const { paramObj: qprm, path: path } = this.sdService.getPathAndQParamsObj('/home');
+                yield this.__page_injector__
+                    .get(_angular_router__WEBPACK_IMPORTED_MODULE_7__.Router)
+                    .navigate([this.sdService.formatPathWithParams(path, undefined)], {
+                    queryParams: Object.assign(qprm, ''),
+                });
+                //appendnew_next_sd_b0mR9TD2ivsS4zpy
+                return bh;
+            }
+            catch (e) {
+                return yield this.errorHandler(bh, e, 'sd_b0mR9TD2ivsS4zpy');
+            }
+        });
     }
     sd_tXdBThF0QkZFB5Cm(bh) {
         try {
@@ -1928,7 +1946,7 @@ let loginComponent = class loginComponent {
     sd_N1S2lwaB2h1BG6Ut(bh) {
         try {
             this.__page_injector__
-                .get(_angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_7__.MatSnackBar)
+                .get(_angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_8__.MatSnackBar)
                 .open('Email already present', '', {
                 duration: 1000,
                 direction: 'ltr',
@@ -1947,7 +1965,7 @@ let loginComponent = class loginComponent {
             try {
                 const { paramObj: qprm, path: path } = this.sdService.getPathAndQParamsObj('/home');
                 yield this.__page_injector__
-                    .get(_angular_router__WEBPACK_IMPORTED_MODULE_8__.Router)
+                    .get(_angular_router__WEBPACK_IMPORTED_MODULE_7__.Router)
                     .navigate([this.sdService.formatPathWithParams(path, undefined)], {
                     queryParams: Object.assign(qprm, ''),
                 });
@@ -1962,7 +1980,7 @@ let loginComponent = class loginComponent {
     sd_HM5OaipCNrpHp7C4(bh) {
         try {
             this.__page_injector__
-                .get(_angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_7__.MatSnackBar)
+                .get(_angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_8__.MatSnackBar)
                 .open('Password or Email is required', '', {
                 duration: 2000,
                 direction: 'ltr',
@@ -2140,7 +2158,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "appRoutes": () => (/* binding */ appRoutes),
 /* harmony export */   "startupServiceFactory": () => (/* binding */ startupServiceFactory)
 /* harmony export */ });
-/* harmony import */ var neutrinos_oauth_client__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! neutrinos-oauth-client */ 97786);
 /* harmony import */ var _not_found_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../not-found.component */ 16942);
 /* harmony import */ var _layout_layout_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../layout/layout.component */ 36674);
 /* harmony import */ var _directives_imgSrc_directive__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../directives/imgSrc.directive */ 31077);
@@ -2163,7 +2180,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../components/navbar/navbar.component */ 33252);
 /* harmony import */ var _components_pages_login_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../components/pages/login.component */ 15978);
 /* harmony import */ var _components_Heading_heading_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../components/Heading/heading.component */ 12613);
-
 
 
 
@@ -2278,12 +2294,7 @@ const appProviders = [
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_START
 const appRoutes = [
     { path: 'test', component: _components_pages_login_component__WEBPACK_IMPORTED_MODULE_18__.loginComponent },
-    {
-        path: 'home',
-        component: _components_pages_home_component__WEBPACK_IMPORTED_MODULE_13__.homeComponent,
-        canActivate: [neutrinos_oauth_client__WEBPACK_IMPORTED_MODULE_22__.NeutrinosAuthGuardService],
-    },
-    { path: 'audio', component: _components_pages_audioTest_component__WEBPACK_IMPORTED_MODULE_8__.audioTestComponent },
+    { path: 'home', component: _components_pages_home_component__WEBPACK_IMPORTED_MODULE_13__.homeComponent },
     { path: '', redirectTo: 'test', pathMatch: 'full' },
     { path: '**', component: _not_found_component__WEBPACK_IMPORTED_MODULE_0__.PageNotFoundComponent },
 ];
